@@ -1276,6 +1276,7 @@ check_selected:
 			case M_OPEN_NEW_SPLIT:
 				view.splitHorizontally().setBuffer(buffer);
 				break;
+				default: break;
 			}
 		}
 

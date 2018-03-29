@@ -776,6 +776,7 @@ class BrowserView extends JPanel
 							.getDirectory());
 					}
 					break;
+					default: break;
 				}
 			}
 			if (!evt.isConsumed())

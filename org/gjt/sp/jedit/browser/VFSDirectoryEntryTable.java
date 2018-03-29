@@ -395,6 +395,8 @@ public class VFSDirectoryEntryTable extends JTable
 					: VFSBrowser.M_OPEN,false);
 
 				break;
+				default: break;
+
 			}
 		}
 		else if(evt.getID() == KeyEvent.KEY_TYPED)

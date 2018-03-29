@@ -362,6 +362,7 @@ public class VFSFileChooserDialog extends EnhancedDialog
 		case VFSBrowser.SAVE_DIALOG:
 			ok.setText(jEdit.getProperty("vfs.browser.dialog.save"));
 			break;
+			default: break;
 		}
 
 		ok.addActionListener(new ActionHandler());
