@@ -1208,6 +1208,8 @@ public class EditPane extends JPanel implements BufferSetListener
 					jEdit.getProperty("view.status.rect-select-changed",
 					new Integer[] { value ? 1 : 0 }));
 				break;
+				default: break;
+
 			}
 
 			status.updateMiscStatus();
