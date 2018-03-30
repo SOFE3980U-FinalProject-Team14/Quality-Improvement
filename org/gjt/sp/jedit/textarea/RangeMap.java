@@ -274,7 +274,7 @@ loop:		for(;;)
 		if(index == -1)
 			return -1;
 		/* in collapsed range */
-		else if(index % 2 == 1)
+		else if(index % 2 != 0)
 		{
 			/* end of prev expanded range */
 			return fvm[index] - 1;
