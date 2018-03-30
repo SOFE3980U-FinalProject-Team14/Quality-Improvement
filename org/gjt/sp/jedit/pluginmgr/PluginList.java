@@ -120,7 +120,7 @@ class PluginList
 		InputStream in = null, inputStream = null;
 		try
 		{
-			if (cachedURL != gzipURL)
+			if (!cachedURL.equals(gzipURL))
 				Log.log(Log.MESSAGE, this, "Using cached pluginlist");
 			inputStream = new URL(cachedURL).openStream();
 			XMLReader parser = XMLReaderFactory.createXMLReader();

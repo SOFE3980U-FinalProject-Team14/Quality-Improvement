@@ -678,7 +678,7 @@ public class DockableWindowManagerImpl extends DockableWindowManager
 	@EBHandler
 	public void handleDockableWindowUpdate(DockableWindowUpdate msg)
 	{
-		if (msg.getWhat() == DockableWindowUpdate.PROPERTIES_CHANGED)
+		if (msg.getWhat().equals(DockableWindowUpdate.PROPERTIES_CHANGED))
 			propertiesChanged();
 	} //}}}
 
@@ -693,7 +693,7 @@ public class DockableWindowManagerImpl extends DockableWindowManager
 	@EBHandler
 	public void handlePluginUpdate(PluginUpdate pmsg)
 	{
-		if(pmsg.getWhat() == PluginUpdate.LOADED)
+		if(pmsg.getWhat().equals(PluginUpdate.LOADED))
 		{
 			Iterator<DockableWindowFactory.Window> iter = factory.getDockableWindowIterator();
 
@@ -710,7 +710,7 @@ public class DockableWindowManagerImpl extends DockableWindowManager
 		{
 			// we don't care
 		}
-		else if(pmsg.getWhat() == PluginUpdate.DEACTIVATED)
+		else if(pmsg.getWhat().equals(PluginUpdate.DEACTIVATED))
 		{
 			Iterator<Entry> iter = getAllPluginEntries(
 				pmsg.getPluginJAR(),false);
@@ -721,7 +721,7 @@ public class DockableWindowManagerImpl extends DockableWindowManager
 					entry.container.remove(entry);
 			}
 		}
-		else if(pmsg.getWhat() == PluginUpdate.UNLOADED)
+		else if(pmsg.getWhat().equals(PluginUpdate.UNLOADED))
 		{
 			Iterator<Entry> iter = getAllPluginEntries(
 				pmsg.getPluginJAR(),true);

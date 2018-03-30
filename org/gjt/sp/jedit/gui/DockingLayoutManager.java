@@ -169,9 +169,9 @@ public class DockingLayoutManager implements EBComponent
 		{
 			BufferUpdate bu = (BufferUpdate) message;
 			Object what = bu.getWhat();
-			if ((what == BufferUpdate.CLOSED) ||
-				(what == BufferUpdate.CREATED) ||
-				(what == BufferUpdate.PROPERTIES_CHANGED))
+			if ((what.equals(BufferUpdate.CLOSED)) ||
+				(what.equals(BufferUpdate.CREATED)) ||
+				(what.equals(BufferUpdate.PROPERTIES_CHANGED)))
 			{
 				return true;
 			}
@@ -180,8 +180,8 @@ public class DockingLayoutManager implements EBComponent
 		{
 			EditPaneUpdate ep = (EditPaneUpdate) message;
 			Object what = ep.getWhat();
-			if ((what == EditPaneUpdate.BUFFER_CHANGED) ||
-				(what == EditPaneUpdate.CREATED))
+			if ((what.equals(EditPaneUpdate.BUFFER_CHANGED)) ||
+				(what.equals(EditPaneUpdate.CREATED)))
 			{
 				return true;
 			}
@@ -198,7 +198,7 @@ public class DockingLayoutManager implements EBComponent
 		if (message instanceof ViewUpdate)
 		{
 			ViewUpdate vu = (ViewUpdate) message;
-			if (vu.getWhat() == ViewUpdate.CLOSED)
+			if (vu.getWhat().equals(ViewUpdate.CLOSED))
 			{
 				View view = jEdit.getActiveView();
 				String mode = currentMode.get(view);

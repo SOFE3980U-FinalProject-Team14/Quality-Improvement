@@ -515,7 +515,7 @@ public class GrabKeyDialog extends JDialog
 			}
 
 			// check whether the other shortcut is the alt. shortcut
-			if(other.name == binding.name)
+			if(other.name.equals(binding.name))
 			{
 				// we don't need two identical shortcuts
 				GUIUtilities.error(GrabKeyDialog.this,

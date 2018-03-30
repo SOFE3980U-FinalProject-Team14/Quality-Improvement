@@ -71,7 +71,7 @@ public class HoverSetStatusMouseHandler extends MouseAdapter
 		{
 			StatusBar statusBar = GUIUtilities.getView((Component) evt.getSource())
 				.getStatus();
-			if (msg == statusBar.getMessage())
+			if (msg.equals(statusBar.getMessage()))
 			{
 				statusBar.setMessage(null);
 			}

@@ -135,7 +135,7 @@ public class LastModifiedWidgetFactory implements StatusWidgetFactory
 		@EditBus.EBHandler
 		public void handleMessage(EditPaneUpdate message)
 		{
-			if (message.getWhat() == EditPaneUpdate.BUFFER_CHANGED &&
+			if (message.getWhat().equals(EditPaneUpdate.BUFFER_CHANGED) &&
 				message.getEditPane().getView() == view)
 			{
 				update();

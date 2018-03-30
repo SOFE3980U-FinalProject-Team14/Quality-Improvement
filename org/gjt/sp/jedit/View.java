@@ -2036,8 +2036,8 @@ loop:		while (true)
 	public void handleBufferUpdate(BufferUpdate msg)
 	{
 		Buffer buffer = msg.getBuffer();
-		if(msg.getWhat() == BufferUpdate.DIRTY_CHANGED
-			|| msg.getWhat() == BufferUpdate.LOADED)
+		if(msg.getWhat().equals(BufferUpdate.DIRTY_CHANGED)
+			|| msg.getWhat().equals(BufferUpdate.LOADED))
 		{
 			EditPane[] editPanes = getEditPanes();
 			for (EditPane ep : editPanes)
@@ -2058,7 +2058,7 @@ loop:		while (true)
 		EditPane editPane = msg.getEditPane();
 		if(editPane !=  null &&
 			editPane.getView() == this
-			&& msg.getWhat() == EditPaneUpdate.BUFFER_CHANGED
+			&& msg.getWhat().equals(EditPaneUpdate.BUFFER_CHANGED)
 			&& editPane.getBuffer().isLoaded())
 		{
 			closeDuplicateBuffers(msg);
@@ -2079,10 +2079,10 @@ loop:		while (true)
 		// "buffer visit" also includes checking the buffer when you change editpanes.
 		// "buffer visit" also includes checking the buffer when you activate view, coming from
 		// another program, which could have alterered file on disk.
-		if ((msg.getWhat() == ViewUpdate.EDIT_PANE_CHANGED || msg.getWhat() == ViewUpdate.ACTIVATED) &&
+		if ((msg.getWhat().equals(ViewUpdate.EDIT_PANE_CHANGED) || msg.getWhat().equals(ViewUpdate.ACTIVATED)) &&
 			((check & GeneralOptionPane.checkFileStatus_focusBuffer) > 0))
 			jEdit.checkBufferStatus(View.this, true);
-		else if ((msg.getWhat() == ViewUpdate.ACTIVATED) &&
+		else if ((msg.getWhat().equals(ViewUpdate.ACTIVATED)) &&
 			(check & GeneralOptionPane.checkFileStatus_focus) > 0)
 				jEdit.checkBufferStatus(View.this,
 					(check != GeneralOptionPane.checkFileStatus_focus));

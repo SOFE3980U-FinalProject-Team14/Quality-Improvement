@@ -108,7 +108,7 @@ public class SelectionLengthWidgetFactory implements StatusWidgetFactory
 		@EBHandler
 		public void handleViewUpdate(ViewUpdate viewUpdate)
 		{
-			if (viewUpdate.getView() == view && viewUpdate.getWhat() == ViewUpdate.EDIT_PANE_CHANGED)
+			if (viewUpdate.getView() == view && viewUpdate.getWhat().equals(ViewUpdate.EDIT_PANE_CHANGED))
 			{
 				if (textArea != null)
 				{

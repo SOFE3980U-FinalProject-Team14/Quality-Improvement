@@ -396,8 +396,8 @@ public class HelpViewer extends JFrame implements HelpViewerInterface, HelpHisto
 	@EBHandler
 	public void handlePluginUpdate(PluginUpdate pmsg)
 	{
-		if(pmsg.getWhat() == PluginUpdate.LOADED
-				|| pmsg.getWhat() == PluginUpdate.UNLOADED)
+		if(pmsg.getWhat().equals(PluginUpdate.LOADED)
+				|| pmsg.getWhat().equals(PluginUpdate.UNLOADED))
 			{
 				if(!pmsg.isExiting())
 				{

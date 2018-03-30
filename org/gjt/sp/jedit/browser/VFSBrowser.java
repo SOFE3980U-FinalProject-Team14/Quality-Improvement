@@ -448,8 +448,8 @@ public class VFSBrowser extends JPanel implements DefaultFocusComponent,
 	@EBHandler
 	public void handleBufferUpdate(BufferUpdate bmsg)
 	{
-		if (bmsg.getWhat() == BufferUpdate.CREATED ||
-			bmsg.getWhat() == BufferUpdate.CLOSED)
+		if (bmsg.getWhat().equals(BufferUpdate.CREATED) ||
+			bmsg.getWhat().equals(BufferUpdate.CLOSED))
 		{
 			browserView.updateFileView();
 		}
@@ -459,8 +459,8 @@ public class VFSBrowser extends JPanel implements DefaultFocusComponent,
 	@EBHandler
 	public void handlePluginUpdate(PluginUpdate pmsg)
 	{
-		if((pmsg.getWhat() == PluginUpdate.LOADED ||
-		   pmsg.getWhat() == PluginUpdate.UNLOADED) &&
+		if((pmsg.getWhat().equals(PluginUpdate.LOADED) ||
+		   pmsg.getWhat().equals(PluginUpdate.UNLOADED)) &&
 		   plugins != null /* plugins can be null if the VFSBrowser menu bar is hidden */)
 		{
 			plugins.updatePopupMenu();
