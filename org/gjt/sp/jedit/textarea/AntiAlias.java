@@ -86,6 +86,8 @@ public class AntiAlias
 
 	public boolean equals(Object other)
 	{
+		if (other == null)
+		{ return false; }
 		return toString().equals(other.toString());
 
 	}

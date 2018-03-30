@@ -113,7 +113,7 @@ class PluginList
 				downloadIt = true;
 			}
 		}
-		if (downloadIt && cachedURL != gzipURL)
+		if (downloadIt && !cachedURL.equals(gzipURL))
 		{
 			downloadPluginList();
 		}

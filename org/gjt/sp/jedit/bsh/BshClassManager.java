@@ -624,6 +624,8 @@ public class BshClassManager
         }
 
         public boolean equals( Object o ) {
+            if(!(o instanceof  SignatureKey))
+            { return false; }
             SignatureKey target = (SignatureKey)o;
             if ( types == null )
                 return target.types == null;
