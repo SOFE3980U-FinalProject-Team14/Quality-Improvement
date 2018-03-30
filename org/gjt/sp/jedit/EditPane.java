@@ -1079,7 +1079,7 @@ public class EditPane extends JPanel implements BufferSetListener
 	public void handleBufferUpdate(BufferUpdate msg)
 	{
 		Buffer _buffer = msg.getBuffer();
-		if(msg.getWhat() == BufferUpdate.CREATED)
+		if(msg.getWhat().equals(BufferUpdate.CREATED))
 		{
 			if(bufferSwitcher != null)
 				bufferSwitcher.updateBufferList();
@@ -1095,7 +1095,7 @@ public class EditPane extends JPanel implements BufferSetListener
 				recentBuffer = null;
 			}
 		}
-		else if(msg.getWhat() == BufferUpdate.CLOSED)
+		else if(msg.getWhat().equals(BufferUpdate.CLOSED))
 		{
 			if(bufferSwitcher != null)
 				bufferSwitcher.updateBufferList();
@@ -1122,7 +1122,7 @@ public class EditPane extends JPanel implements BufferSetListener
 				caretsForPath.remove(closedBuffer.getPath());
 			}
 		}
-		else if(msg.getWhat() == BufferUpdate.LOAD_STARTED)
+		else if(msg.getWhat().equals(BufferUpdate.LOAD_STARTED))
 		{
 			if(_buffer == buffer)
 			{
@@ -1130,7 +1130,7 @@ public class EditPane extends JPanel implements BufferSetListener
 				textArea.getPainter().repaint();
 			}
 		}
-		else if(msg.getWhat() == BufferUpdate.LOADED)
+		else if(msg.getWhat().equals(BufferUpdate.LOADED))
 		{
 			if(_buffer == buffer)
 			{
@@ -1150,7 +1150,7 @@ public class EditPane extends JPanel implements BufferSetListener
 			}
 
 		}
-		else if(msg.getWhat() == BufferUpdate.DIRTY_CHANGED)
+		else if(msg.getWhat().equals(BufferUpdate.DIRTY_CHANGED))
 		{
 			if(_buffer == buffer && bufferSwitcher != null)
 			{
@@ -1160,12 +1160,12 @@ public class EditPane extends JPanel implements BufferSetListener
 					bufferSwitcher.updateBufferList();
 			}
 		}
-		else if(msg.getWhat() == BufferUpdate.MARKERS_CHANGED)
+		else if(msg.getWhat().equals(BufferUpdate.MARKERS_CHANGED))
 		{
 			if(_buffer == buffer)
 				textArea.getGutter().repaint();
 		}
-		else if(msg.getWhat() == BufferUpdate.PROPERTIES_CHANGED)
+		else if(msg.getWhat().equals(BufferUpdate.PROPERTIES_CHANGED))
 		{
 			if(_buffer == buffer && buffer.isLoaded())
 			{
@@ -1174,7 +1174,7 @@ public class EditPane extends JPanel implements BufferSetListener
 					view.getStatus().updateBufferStatus();
 			}
 		}
-		else if(msg.getWhat() == BufferUpdate.SAVED && _buffer == buffer)
+		else if(msg.getWhat().equals(BufferUpdate.SAVED) && _buffer == buffer)
 		{
 			textArea.propertiesChanged();
 		}
