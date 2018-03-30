@@ -47,7 +47,6 @@ class PluginListHandler extends DefaultHandler
 		download = new StringBuilder();
 		downloadSource = new StringBuilder();
 	} //}}}
-
 	//{{{ resolveEntity() method
 	public InputSource resolveEntity(String publicId, String systemId)
 	{
@@ -57,25 +56,25 @@ class PluginListHandler extends DefaultHandler
 	//{{{ attribute() method
 	public void attribute(String aname, String value, boolean isSpecified)
 	{
-		if(aname == "NAME")
+		if(aname.equals("NAME"))
 			name = value;
-		else if(aname == "JAR")
+		else if(aname.equals("JAR"))
 			jar = value;
-		else if(aname == "VERSION")
+		else if(aname.equals("VERSION"))
 			version = value;
-		else if(aname == "DATE")
+		else if(aname.equals("DATE"))
 			date = value;
-		else if(aname == "OBSOLETE")
+		else if(aname.equals("OBSOLETE"))
 			obsolete = ("TRUE".equals(value));
-		else if(aname == "WHAT")
+		else if(aname.equals("WHAT"))
 			depWhat = value;
-		else if(aname == "FROM")
+		else if(aname.equals("FROM"))
 			depFrom = value;
-		else if(aname == "TO")
+		else if(aname.equals("TO"))
 			depTo = value;
-		else if(aname == "PLUGIN")
+		else if(aname.equals("PLUGIN"))
 			depPlugin = value;
-		else if(aname == "SIZE")
+		else if(aname.equals("SIZE"))
 		{
 			size = Integer.parseInt(value);
 			if(size == 0)
@@ -274,4 +273,46 @@ class PluginListHandler extends DefaultHandler
 	} //}}}
 
 	//}}}
+
+	//{{{ getters
+    String getJar() {
+        return jar;
+    }
+
+    boolean isObsolete() {
+        return obsolete;
+    }
+
+    String getVersion() {
+        return version;
+    }
+
+    String getDate() {
+        return date;
+    }
+
+    int getSize() {
+        return size;
+    }
+
+    String getDepWhat() {
+        return depWhat;
+    }
+
+    String getDepFrom() {
+        return depFrom;
+    }
+
+    String getDepTo() {
+        return depTo;
+    }
+
+    String getDepPlugin() {
+        return depPlugin;
+    }
+
+    String getName() {
+        return name;
+    }
+    //}}}
 }
