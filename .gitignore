@@ -1,2 +1,5 @@
 
 .idea/workspace.xml
+.idea/*
+build/settings/*
+.idea/workspace.xml

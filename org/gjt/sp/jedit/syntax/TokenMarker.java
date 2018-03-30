@@ -956,7 +956,8 @@ unwind:		while(context.parent != null)
 			code += (parent != null) ? parent.hashCode() : 0;
 			code += (inRule != null) ? inRule.hashCode() : 0;
 			code += (rules != null) ? rules.hashCode() : 0;
-			code += (spanEndSubst != null) ? spanEndSubst.hashCode() : 0;
+			//code += (spanEndSubst != null) ? spanEndSubst.hashCode() : 0; //Returns value of System.identityHashCode regardless of contents/length
+			code += (spanEndSubst != null) ? java.util.Arrays.hashCode(spanEndSubst): 0;
 			code += (spanEndSubstRegex != null) ? spanEndSubstRegex.hashCode() : 0;
 			return code;
 		} //}}}
