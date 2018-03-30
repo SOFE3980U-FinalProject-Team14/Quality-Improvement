@@ -31,6 +31,8 @@ import java.io.Writer;
 
 import java.text.DateFormat;
 
+import java.text.FieldPosition;
+import java.text.ParsePosition;
 import java.util.*;
 
 import javax.swing.event.ListDataEvent;
@@ -412,9 +414,11 @@ public class Log
 	//{{{ _log() method
 	private static void _log(int urgency, String source, String message)
 	{
-		String fullMessage = timeFormat.format(new Date()) + " ["+Thread.currentThread().getName()+"] [" + urgencyToString(urgency) + "] " + source
-			+ ": " + message;
-
+		String fullMessage;
+		synchronized (timeFormat) {
+			 fullMessage = timeFormat.format(new Date()) + " [" + Thread.currentThread().getName() + "] [" + urgencyToString(urgency) + "] " + source
+					+ ": " + message;
+		}
 		try
 		{
 			log[logLineCount] = fullMessage;

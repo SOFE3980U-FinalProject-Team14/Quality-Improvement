@@ -238,7 +238,9 @@ public class FileVFS extends VFS
 			fetchAttrs();
 			if (name.equals(EA_MODIFIED))
 			{
-				return DATE_FORMAT.format(new Date(modified));
+				synchronized ((DATE_FORMAT)){
+					return DATE_FORMAT.format(new Date(modified));
+				}
 			}
 			else
 			{
