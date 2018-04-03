@@ -28,6 +28,7 @@ import org.gjt.sp.util.Log;
 import org.gjt.sp.util.StandardUtilities;
 
 import javax.swing.event.EventListenerList;
+import java.io.Serializable;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -157,14 +158,14 @@ public class BufferSet
 
 	//{{{ getSorter()
 	/** @return the Comparator used for this bufferset
-	    can be null if there is no sorting 
-		@since jEdit 5.2
-	*/
+	can be null if there is no sorting
+	 @since jEdit 5.2
+	 */
 	@Nullable
 	public Comparator<Buffer> getSorter() {
 		return sorter;
 	}//}}}
-	
+
 	//{{{ getPreviousBuffer() method
 	public Buffer getPreviousBuffer(int index)
 	{
@@ -360,7 +361,7 @@ public class BufferSet
 	//}}}
 
 	//{{{ NameSorter class
-	public static class NameSorter implements Comparator<Buffer>
+	public static class NameSorter implements Comparator<Buffer>, Serializable
 	{
 		public int compare(Buffer o1, Buffer o2)
 		{
@@ -375,7 +376,7 @@ public class BufferSet
 	} //}}}
 
 	//{{{ PathSorter class
-	public static class PathSorter implements Comparator<Buffer>
+	public static class PathSorter implements Comparator<Buffer>, Serializable
 	{
 		public int compare(Buffer o1, Buffer o2)
 		{
