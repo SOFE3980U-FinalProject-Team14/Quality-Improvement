@@ -2,9 +2,85 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="f349eb00-71c1-4664-860d-4489a1459246" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/bsh/commands/dir.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jEdit.iml" afterPath="$PROJECT_DIR$/jEdit.iml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/Abbrevs.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/Abbrevs.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/BeanShell.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/BeanShell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/BeanShellAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/BeanShellAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/BeanShellFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/BeanShellFacade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/Buffer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/Buffer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/BufferHistory.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/BufferHistory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/EditBus$SendMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/EditBus$SendMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/EditServer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/EditServer$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/EditServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/EditServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/JEditActionSet$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/JEditActionSet$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/JEditBeanShellAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/JEditBeanShellAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/JEditKillRing.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/JEditKillRing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/JEditRegisterSaver.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/JEditRegisterSaver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/Macros$Macro.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/Macros$Macro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/Macros.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/Macros.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/PerspectiveManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/PerspectiveManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/PluginJAR.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/PluginJAR.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/PropertyManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/PropertyManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/Registers.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/Registers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/browser/DeleteBrowserTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/browser/DeleteBrowserTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/browser/ListDirectoryBrowserTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/browser/ListDirectoryBrowserTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/browser/MkDirBrowserTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/browser/MkDirBrowserTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/browser/RenameBrowserTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/browser/RenameBrowserTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/browser/VFSBrowser$BrowserActionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/browser/VFSBrowser$BrowserActionContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/browser/VFSBrowser.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/browser/VFSBrowser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/browser/VFSDirectoryEntryTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/browser/VFSDirectoryEntryTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/browser/VFSFileChooserDialog$GetFileTypeRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/browser/VFSFileChooserDialog$GetFileTypeRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/bsh/BSHBlock.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/bsh/BSHBlock.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/bsh/BSHTryStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/bsh/BSHTryStatement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/bsh/Interpreter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/bsh/Interpreter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/bsh/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/bsh/Parser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/buffer/JEditBuffer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/buffer/JEditBuffer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/bufferio/BufferAutosaveRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/bufferio/BufferAutosaveRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/bufferio/BufferInsertRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/bufferio/BufferInsertRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/bufferio/BufferLoadRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/bufferio/BufferLoadRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/bufferio/BufferSaveRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/bufferio/BufferSaveRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/bufferio/MarkersSaveRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/bufferio/MarkersSaveRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/gui/CloseDialog$ActionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/gui/CloseDialog$ActionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/gui/DockableWindowManagerImpl$DockableWindowConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/gui/DockableWindowManagerImpl$DockableWindowConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/gui/InputHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/gui/InputHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/gui/JEditHistoryModelSaver.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/gui/JEditHistoryModelSaver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/gui/RegisterViewer$DocumentHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/gui/RegisterViewer$DocumentHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/gui/RolloverButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/gui/RolloverButton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/gui/statusbar/LastModifiedWidgetFactory$LastModifiedWidget.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/gui/statusbar/LastModifiedWidgetFactory$LastModifiedWidget.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/help/HelpIndex.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/help/HelpIndex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/input/TextAreaInputHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/input/TextAreaInputHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/io/CopyFileWorker.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/io/CopyFileWorker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/io/FileVFS.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/io/FileVFS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/io/LocalFileSaveTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/io/LocalFileSaveTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/io/VFS.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/io/VFS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/io/VFSFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/io/VFSFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/jEdit.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/jEdit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/options/AppearanceOptionPane.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/options/AppearanceOptionPane.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/options/PluginManagerOptionPane$UpdateMirrorsThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/options/PluginManagerOptionPane$UpdateMirrorsThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/pluginmgr/ManagePanel$SaveButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/pluginmgr/ManagePanel$SaveButton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/pluginmgr/MirrorList.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/pluginmgr/MirrorList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/pluginmgr/PluginList.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/pluginmgr/PluginList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/pluginmgr/PluginManager$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/pluginmgr/PluginManager$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/pluginmgr/Roster$Install.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/pluginmgr/Roster$Install.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/print/BufferPrinter1_4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/print/BufferPrinter1_4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/print/BufferPrinter1_7.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/print/BufferPrinter1_7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/search/DirectoryListSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/search/DirectoryListSet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/search/HyperSearchRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/search/HyperSearchRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/search/HyperSearchResults$HighlightingTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/search/HyperSearchResults$HighlightingTree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/search/HyperSearchResults$TreeDisplayAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/search/HyperSearchResults$TreeDisplayAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/search/SearchAndReplace.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/search/SearchAndReplace.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/search/SearchDialog.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/search/SearchDialog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/syntax/ModeProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/syntax/ModeProvider.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/textarea/DisplayManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/textarea/DisplayManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/textarea/StandaloneTextArea.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/textarea/StandaloneTextArea.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/textarea/TextArea.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/textarea/TextArea.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/textarea/TextAreaTransferHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/jedit/textarea/TextAreaTransferHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/util/IOUtilities.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/util/IOUtilities.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/util/Log$LogPrintStream.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/util/Log$LogPrintStream.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/util/XMLUtilities.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/gjt/sp/util/XMLUtilities.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/jedit/keymap/KeymapImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/jedit/keymap/KeymapImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/core/org/jedit/keymap/KeymapManagerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/core/org/jedit/keymap/KeymapManagerImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org/gjt/sp/jedit/browser/VFSDirectoryEntryTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/org/gjt/sp/jedit/browser/VFSDirectoryEntryTableModel.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/" />
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -21,12 +97,20 @@
   <component name="ChangesViewManager" show_ignored="true" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="jEdit.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="VFSDirectoryEntryTableModel.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/org/gjt/sp/jedit/browser/VFSDirectoryEntryTableModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="534">
+              <caret line="412" column="72" lean-forward="true" selection-start-line="412" selection-start-column="72" selection-end-line="412" selection-end-column="72" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jEdit.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/org/gjt/sp/jedit/jEdit.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="45" column="24" lean-forward="false" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
-              <folding />
+            <state relative-caret-position="816">
+              <caret line="67" column="44" selection-start-line="67" selection-start-column="44" selection-end-line="67" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -34,29 +118,17 @@
       <file leaf-file-name="Native2ASCIIEncodingTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/org/jedit/io/Native2ASCIIEncodingTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="34" column="48" lean-forward="false" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
-              <folding />
+            <state relative-caret-position="-6110">
+              <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/startup/README.txt">
+      <file leaf-file-name="PluginListHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/org/gjt/sp/jedit/pluginmgr/PluginListHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="startup.bsh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/startup/startup.bsh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="458">
+              <caret line="75" column="34" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -64,29 +136,8 @@
       <file leaf-file-name="README.SRC.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.SRC.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4600">
-              <caret line="184" column="0" lean-forward="false" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Compile_Dependencies.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/libraries/Compile_Dependencies.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Test_Dependencies.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/libraries/Test_Dependencies.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="3128">
+              <caret line="184" selection-start-line="184" selection-end-line="184" />
             </state>
           </provider>
         </entry>
@@ -94,9 +145,8 @@
       <file leaf-file-name="Runtime_Dependencies.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/libraries/Runtime_Dependencies.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="14" column="7" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-              <folding />
+            <state relative-caret-position="238">
+              <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -118,10 +168,10 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GradleLocalSettings">
-    <option name="externalProjectsViewState">
-      <projects_view />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="fawaz" />
+      </map>
     </option>
   </component>
   <component name="IdeDocumentHistory">
@@ -129,6 +179,7 @@
       <list>
         <option value="$PROJECT_DIR$/README.SRC.txt" />
         <option value="$PROJECT_DIR$/test/org/jedit/io/Native2ASCIIEncodingTest.java" />
+        <option value="$PROJECT_DIR$/org/gjt/sp/jedit/browser/VFSDirectoryEntryTableModel.java" />
       </list>
     </option>
   </component>
@@ -164,22 +215,10 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -206,7 +245,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -240,29 +280,12 @@
   </component>
   <component name="RunManager" selected="Application.jEdit">
     <configuration default="true" type="Applet" factoryName="Applet">
-      <module />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" />
@@ -272,30 +295,13 @@
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="singleModule" />
       </option>
-      <envs />
       <patterns />
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
@@ -308,31 +314,38 @@
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="singleModule" />
       </option>
       <option name="USE_DEFAULT_REPORTERS" value="false" />
       <option name="PROPERTIES_FILE" />
-      <envs />
       <properties />
       <listeners />
     </configuration>
-    <list size="6">
-      <item index="0" class="java.lang.String" itemvalue="Application.jEdit" />
-      <item index="1" class="java.lang.String" itemvalue="Application.jEdit (Background Mode)" />
-      <item index="2" class="java.lang.String" itemvalue="Application.jEdit (Code Coverage)" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.Unit Tests" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.Unit Tests (Code Coverage)" />
-      <item index="5" class="java.lang.String" itemvalue="Remote.Remote (5005)" />
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.jEdit" />
+      <item itemvalue="Application.jEdit (Background Mode)" />
+      <item itemvalue="Application.jEdit (Code Coverage)" />
+      <item itemvalue="JUnit.Unit Tests" />
+      <item itemvalue="JUnit.Unit Tests (Code Coverage)" />
+      <item itemvalue="Remote.Remote (5005)" />
     </list>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
-  </component>
-  <component name="SvnConfiguration" myUseAcceleration="nothing" cleanupOnStartRun="true">
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
     <configuration>C:\Users\100568635\AppData\Roaming\Subversion</configuration>
     <supportedVersion>125</supportedVersion>
   </component>
@@ -349,42 +362,46 @@
       <workItem from="1522114943727" duration="974000" />
       <workItem from="1522181887947" duration="4252000" />
       <workItem from="1522189748101" duration="719000" />
+      <workItem from="1522780841883" duration="1296000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15243000" />
+    <option name="totallyTimeSpent" value="16539000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26476908" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="TODO" order="12" />
+      <window_info anchor="bottom" id="FindBugs-IDEA" order="1" weight="0.32897604" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32915717" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info id="Image Layers" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" weight="0.32915717" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="4" weight="0.32915717" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="10" visible="true" weight="0.32897604" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32915717" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="Designer" order="2" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2675906" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="2" />
+      <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="3" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -418,10 +435,6 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager />
-    <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -484,121 +497,110 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/org/gjt/sp/jedit/jEdit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="442">
+          <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/org/jedit/io/Native2ASCIIEncodingTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="34" column="48" lean-forward="false" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
-          <folding />
+        <state relative-caret-position="578">
+          <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/startup/README.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/startup/startup.bsh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/README.SRC.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4600">
-          <caret line="184" column="0" lean-forward="false" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="3128">
+          <caret line="184" selection-start-line="184" selection-end-line="184" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/libraries/Compile_Dependencies.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/libraries/Test_Dependencies.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/libraries/Runtime_Dependencies.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="14" column="7" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-          <folding />
+        <state relative-caret-position="238">
+          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/org/gjt/sp/jedit/jEdit.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/org/jedit/io/Native2ASCIIEncodingTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/startup/README.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/startup/startup.bsh">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.SRC.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="4600">
+          <caret line="184" selection-start-line="184" selection-end-line="184" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/startup/startup.bsh">
+    <entry file="file://$PROJECT_DIR$/.idea/libraries/Compile_Dependencies.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/libraries/Test_Dependencies.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/libraries/Runtime_Dependencies.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="350">
+          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/startup/README.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/startup/startup.bsh">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/README.SRC.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4550">
-          <caret line="182" column="16" lean-forward="false" selection-start-line="182" selection-start-column="8" selection-end-line="182" selection-end-column="17" />
-          <folding />
+          <caret line="182" column="16" selection-start-line="182" selection-start-column="8" selection-end-line="182" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/org/gjt/sp/jedit/jEdit.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="650">
-          <caret line="45" column="24" lean-forward="false" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
-          <folding />
+          <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/libraries/Compile_Dependencies.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/libraries/Test_Dependencies.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/libraries/Runtime_Dependencies.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
-          <caret line="14" column="7" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-          <folding />
+          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -606,89 +608,54 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1100">
           <caret line="44" column="29" lean-forward="true" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/org/gjt/sp/jedit/jEdit.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="650">
-          <caret line="45" column="24" lean-forward="false" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
-          <folding />
+          <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/startup/README.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/startup/startup.bsh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/README.SRC.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4975">
-          <caret line="199" column="48" lean-forward="false" selection-start-line="199" selection-start-column="48" selection-end-line="199" selection-end-column="48" />
-          <folding />
+          <caret line="199" column="48" selection-start-line="199" selection-start-column="48" selection-end-line="199" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/libraries/Compile_Dependencies.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/libraries/Test_Dependencies.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/libraries/Runtime_Dependencies.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
-          <caret line="14" column="7" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-          <folding />
+          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/org/jedit/io/Native2ASCIIEncodingTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
-          <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
-          <folding />
+          <caret line="36" column="16" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/org/gjt/sp/jedit/jEdit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/org/gjt/sp/jedit/jEdit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/org/gjt/sp/jedit/pluginmgr/PluginManagerProgress.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -701,78 +668,63 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
           <caret line="55" column="31" lean-forward="true" selection-start-line="55" selection-start-column="31" selection-end-line="55" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/libraries/Compile_Dependencies.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/libraries/Test_Dependencies.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/jEdit.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/libraries/Runtime_Dependencies.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="14" column="7" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/startup/README.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/startup/startup.bsh">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/org/gjt/sp/jedit/jEdit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="816">
+          <caret line="67" column="44" selection-start-line="67" selection-start-column="44" selection-end-line="67" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.SRC.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4600">
-          <caret line="184" column="0" lean-forward="false" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="3128">
+          <caret line="184" selection-start-line="184" selection-end-line="184" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/libraries/Runtime_Dependencies.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/org/gjt/sp/jedit/pluginmgr/PluginListHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="75" column="34" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/org/jedit/io/Native2ASCIIEncodingTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="34" column="48" lean-forward="false" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
-          <folding />
+        <state relative-caret-position="-6110">
+          <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/org/gjt/sp/jedit/jEdit.java">
+    <entry file="file://$PROJECT_DIR$/org/gjt/sp/jedit/browser/VFSDirectoryEntryTableModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="45" column="24" lean-forward="false" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
-          <folding />
+        <state relative-caret-position="534">
+          <caret line="412" column="72" lean-forward="true" selection-start-line="412" selection-start-column="72" selection-end-line="412" selection-end-column="72" />
         </state>
       </provider>
     </entry>
