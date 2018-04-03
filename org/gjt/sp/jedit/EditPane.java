@@ -186,7 +186,7 @@ public class EditPane extends JPanel implements BufferSetListener
 			}
 
 			EditBus.send(new EditPaneUpdate(this,EditPaneUpdate
-				.BUFFER_CHANGED));
+					.BUFFER_CHANGED));
 		}
 
 		if (requestFocus)
@@ -197,8 +197,8 @@ public class EditPane extends JPanel implements BufferSetListener
 				{
 					// only do this if we are the current edit pane
 					if(view.getEditPane() == EditPane.this
-						&& (bufferSwitcher == null
-						|| !bufferSwitcher.isPopupVisible()))
+							&& (bufferSwitcher == null
+							|| !bufferSwitcher.isPopupVisible()))
 					{
 						textArea.requestFocus();
 					}
@@ -260,7 +260,7 @@ public class EditPane extends JPanel implements BufferSetListener
 		if(recentBuffer != null)
 			setBuffer(recentBuffer);
 		else
-			javax.swing.UIManager.getLookAndFeel().provideErrorFeedback(null); 
+			javax.swing.UIManager.getLookAndFeel().provideErrorFeedback(null);
 	} //}}}
 
 	//{{{ focusOnTextArea() method
@@ -310,7 +310,7 @@ public class EditPane extends JPanel implements BufferSetListener
 	public void focusBufferSwitcher()
 	{
 		if(bufferSwitcher == null)
-			javax.swing.UIManager.getLookAndFeel().provideErrorFeedback(null); 
+			javax.swing.UIManager.getLookAndFeel().provideErrorFeedback(null);
 		else
 		{
 			SwingUtilities.invokeLater(new Runnable()
@@ -336,7 +336,7 @@ public class EditPane extends JPanel implements BufferSetListener
 			return;
 
 		buffer.setIntegerProperty(Buffer.CARET,
-			textArea.getCaretPosition());
+				textArea.getCaretPosition());
 
 		CaretInfo caretInfo = caretsForPath.get(buffer.getPath());
 		if (caretInfo == null)
@@ -357,17 +357,17 @@ public class EditPane extends JPanel implements BufferSetListener
 		caretInfo.multipleSelection = textArea.isMultipleSelectionEnabled();
 
 		buffer.setIntegerProperty(Buffer.SCROLL_VERT,
-			textArea.getFirstPhysicalLine());
+				textArea.getFirstPhysicalLine());
 		caretInfo.scrollVert = textArea.getFirstPhysicalLine();
 		buffer.setIntegerProperty(Buffer.SCROLL_HORIZ,
-			textArea.getHorizontalOffset());
+				textArea.getHorizontalOffset());
 		caretInfo.scrollHoriz = textArea.getHorizontalOffset();
 		if (!buffer.isUntitled())
 		{
 			BufferHistory.setEntry(buffer.getPath(), textArea.getCaretPosition(),
-				(Selection[])buffer.getProperty(Buffer.SELECTION),
-				buffer.getStringProperty(JEditBuffer.ENCODING),
-				buffer.getMode().getName());
+					(Selection[])buffer.getProperty(Buffer.SELECTION),
+					buffer.getStringProperty(JEditBuffer.ENCODING),
+					buffer.getMode().getName());
 		}
 	} //}}}
 
@@ -404,7 +404,7 @@ public class EditPane extends JPanel implements BufferSetListener
 
 		if(caret != -1)
 			textArea.setCaretPosition(Math.min(caret,
-				buffer.getLength()));
+					buffer.getLength()));
 
 		// set any selections
 		Selection[] selection = caretInfo.selection;
@@ -503,7 +503,7 @@ public class EditPane extends JPanel implements BufferSetListener
 		java.util.List<Marker> markers = buffer.getMarkers();
 		if(markers.isEmpty())
 		{
-			javax.swing.UIManager.getLookAndFeel().provideErrorFeedback(null); 
+			javax.swing.UIManager.getLookAndFeel().provideErrorFeedback(null);
 			return;
 		}
 
@@ -541,7 +541,7 @@ public class EditPane extends JPanel implements BufferSetListener
 		java.util.List<Marker> markers = buffer.getMarkers();
 		if(markers.isEmpty())
 		{
-			javax.swing.UIManager.getLookAndFeel().provideErrorFeedback(null); 
+			javax.swing.UIManager.getLookAndFeel().provideErrorFeedback(null);
 			return;
 		}
 
@@ -581,7 +581,7 @@ public class EditPane extends JPanel implements BufferSetListener
 		Marker marker = buffer.getMarker(shortcut);
 		if(marker == null)
 		{
-			javax.swing.UIManager.getLookAndFeel().provideErrorFeedback(null); 
+			javax.swing.UIManager.getLookAndFeel().provideErrorFeedback(null);
 			return;
 		}
 
@@ -632,7 +632,7 @@ public class EditPane extends JPanel implements BufferSetListener
 		Marker marker = buffer.getMarker(shortcut);
 		if(marker == null)
 		{
-			javax.swing.UIManager.getLookAndFeel().provideErrorFeedback(null); 
+			javax.swing.UIManager.getLookAndFeel().provideErrorFeedback(null);
 			return;
 		}
 
@@ -711,7 +711,7 @@ public class EditPane extends JPanel implements BufferSetListener
 		{
 			// The closed buffer is the current buffer
 			Buffer newBuffer = recentBuffer != null ?
-				recentBuffer : bufferSet.getPreviousBuffer(index);
+					recentBuffer : bufferSet.getPreviousBuffer(index);
 
 			if(newBuffer != null && !newBuffer.isClosed())
 			{
@@ -763,8 +763,8 @@ public class EditPane extends JPanel implements BufferSetListener
 	public String toString()
 	{
 		return getClass().getName() + '['
-			+ (view.getEditPane() == this
-			? "active]" : "inactive]");
+				+ (view.getEditPane() == this
+				? "active]" : "inactive]");
 	} //}}}
 
 	//{{{ Package-private members
@@ -781,15 +781,15 @@ public class EditPane extends JPanel implements BufferSetListener
 				// do nothing
 				break;
 			case view:
+			{
+				EditPane editPane = view.getEditPane();
+				if (editPane != null)
 				{
-					EditPane editPane = view.getEditPane();
-					if (editPane != null)
-					{
-						// if we have an editpane we copy it
-						source = editPane.getBufferSet();
-					}
+					// if we have an editpane we copy it
+					source = editPane.getBufferSet();
 				}
-				break;
+			}
+			break;
 			case global:
 				View activeView = jEdit.getActiveView();
 				if (activeView != null)
@@ -821,15 +821,15 @@ public class EditPane extends JPanel implements BufferSetListener
 		gutter.setSelectionAreaEnabled(GutterOptionPane.isSelectionAreaEnabled());
 		gutter.addExtension(markerHighlight);
 		gutter.setSelectionPopupHandler(
-			new GutterPopupHandler()
-			{
-				public void handlePopup(int x, int y, int line)
+				new GutterPopupHandler()
 				{
-					Buffer buffer = getBuffer();
-					buffer.addOrRemoveMarker('\0',
-						buffer.getLineStartOffset(line));
-				}
-			});
+					public void handlePopup(int x, int y, int line)
+					{
+						Buffer buffer = getBuffer();
+						buffer.addOrRemoveMarker('\0',
+								buffer.getLineStartOffset(line));
+					}
+				});
 
 		textArea.addStatusListener(new StatusHandler());
 		add(BorderLayout.CENTER,textArea);
@@ -896,32 +896,32 @@ public class EditPane extends JPanel implements BufferSetListener
 		initPainter(painter);
 		Gutter gutter = textArea.getGutter();
 		gutter.setExpanded(jEdit.getBooleanProperty(
-			"view.gutter.lineNumbers"));
+				"view.gutter.lineNumbers"));
 		int interval = jEdit.getIntegerProperty(
-			"view.gutter.highlightInterval",5);
+				"view.gutter.highlightInterval",5);
 		gutter.setHighlightInterval(interval);
 		gutter.setCurrentLineHighlightEnabled(jEdit.getBooleanProperty(
-			"view.gutter.highlightCurrentLine"));
+				"view.gutter.highlightCurrentLine"));
 		gutter.setStructureHighlightEnabled(jEdit.getBooleanProperty(
-			"view.gutter.structureHighlight"));
+				"view.gutter.structureHighlight"));
 		gutter.setStructureHighlightColor(
-			jEdit.getColorProperty("view.gutter.structureHighlightColor"));
+				jEdit.getColorProperty("view.gutter.structureHighlightColor"));
 		Color backgroundColor = jEdit.getColorProperty("view.gutter.bgColor");
 		gutter.setBackground(backgroundColor);
 		gutter.setForeground(
-			jEdit.getColorProperty("view.gutter.fgColor"));
+				jEdit.getColorProperty("view.gutter.fgColor"));
 		gutter.setHighlightedForeground(
-			jEdit.getColorProperty("view.gutter.highlightColor"));
+				jEdit.getColorProperty("view.gutter.highlightColor"));
 		gutter.setFoldColor(
-			jEdit.getColorProperty("view.gutter.foldColor"));
+				jEdit.getColorProperty("view.gutter.foldColor"));
 		markerHighlight.setMarkerHighlightColor(
-			jEdit.getColorProperty("view.gutter.markerColor"));
+				jEdit.getColorProperty("view.gutter.markerColor"));
 		markerHighlight.setMarkerHighlightEnabled(jEdit.getBooleanProperty(
-			"view.gutter.markerHighlight"));
+				"view.gutter.markerHighlight"));
 		gutter.setCurrentLineForeground(
-			jEdit.getColorProperty("view.gutter.currentLineColor"));
+				jEdit.getColorProperty("view.gutter.currentLineColor"));
 		String alignment = jEdit.getProperty(
-			"view.gutter.numberAlignment");
+				"view.gutter.numberAlignment");
 		if ("right".equals(alignment))
 		{
 			gutter.setLineNumberAlignment(Gutter.RIGHT);
@@ -938,53 +938,53 @@ public class EditPane extends JPanel implements BufferSetListener
 		gutter.setFont(jEdit.getFontProperty("view.gutter.font"));
 		gutter.setGutterEnabled(GutterOptionPane.isGutterEnabled());
 		gutter.setMinLineNumberDigitCount(
-			GutterOptionPane.getMinLineNumberDigits());
+				GutterOptionPane.getMinLineNumberDigits());
 		gutter.setSelectionAreaEnabled(
-			GutterOptionPane.isSelectionAreaEnabled());
+				GutterOptionPane.isSelectionAreaEnabled());
 		gutter.setSelectionAreaBackground(
-			GutterOptionPane.getSelectionAreaBackground());
+				GutterOptionPane.getSelectionAreaBackground());
 		gutter.setSelectionAreaWidth(
 				GutterOptionPane.getSelectionAreaWidth());
 
 		int width = jEdit.getIntegerProperty(
-			"view.gutter.borderWidth",3);
+				"view.gutter.borderWidth",3);
 		gutter.setBorder(width,
-			jEdit.getColorProperty("view.gutter.focusBorderColor"),
-			jEdit.getColorProperty("view.gutter.noFocusBorderColor"),
-			textArea.getPainter().getBackground());
+				jEdit.getColorProperty("view.gutter.focusBorderColor"),
+				jEdit.getColorProperty("view.gutter.noFocusBorderColor"),
+				textArea.getPainter().getBackground());
 		gutter.setFoldPainter(textArea.getFoldPainter());
 
 		textArea.setCaretBlinkEnabled(jEdit.getBooleanProperty(
-			"view.caretBlink"));
+				"view.caretBlink"));
 
 		textArea.setElectricScroll(jEdit.getIntegerProperty(
-			"view.electricBorders",0));
+				"view.electricBorders",0));
 
 		// Set up the right-click popup menu
 		textArea.createPopupMenu(null);
 
 		// use old property name for backwards compatibility
 		textArea.setQuickCopyEnabled(jEdit.getBooleanProperty(
-			"view.middleMousePaste"));
+				"view.middleMousePaste"));
 
 		textArea.setDragEnabled(jEdit.getBooleanProperty(
-			"view.dragAndDrop"));
+				"view.dragAndDrop"));
 
 		textArea.setJoinNonWordChars(jEdit.getBooleanProperty(
-			"view.joinNonWordChars"));
+				"view.joinNonWordChars"));
 
 		textArea.setCtrlForRectangularSelection(jEdit.getBooleanProperty(
-			"view.ctrlForRectangularSelection"));
-		
+				"view.ctrlForRectangularSelection"));
+
 		textArea.setBackground(UIManager.getDefaults().getColor(
-			"ScrollBar.background"));
+				"ScrollBar.background"));
 
 		textArea.propertiesChanged();
 
 		if (bufferSwitcher != null)
 		{
 			bufferSwitcher.setMaximumRowCount(jEdit.getIntegerProperty(
-				"bufferSwitcher.maxRowCount",10));
+					"bufferSwitcher.maxRowCount",10));
 		}
 	} //}}}
 
@@ -999,45 +999,45 @@ public class EditPane extends JPanel implements BufferSetListener
 	{
 		painter.setFont(jEdit.getFontProperty("view.font"));
 		painter.setStructureHighlightEnabled(jEdit.getBooleanProperty(
-			"view.structureHighlight"));
+				"view.structureHighlight"));
 		painter.setStructureHighlightColor(
-			jEdit.getColorProperty("view.structureHighlightColor"));
+				jEdit.getColorProperty("view.structureHighlightColor"));
 		painter.setEOLMarkersPainted(jEdit.getBooleanProperty(
-			"view.eolMarkers"));
+				"view.eolMarkers"));
 		painter.setEOLMarkerChar(
-			jEdit.getProperty("view.eolMarkerChar", "·"));
+				jEdit.getProperty("view.eolMarkerChar", "·"));
 		painter.setEOLMarkerColor(
-			jEdit.getColorProperty("view.eolMarkerColor"));
+				jEdit.getColorProperty("view.eolMarkerColor"));
 		painter.setWrapGuidePainted(jEdit.getBooleanProperty(
-			"view.wrapGuide"));
+				"view.wrapGuide"));
 		painter.setWrapGuideColor(
-			jEdit.getColorProperty("view.wrapGuideColor"));
+				jEdit.getColorProperty("view.wrapGuideColor"));
 		painter.setCaretColor(
-			jEdit.getColorProperty("view.caretColor"));
+				jEdit.getColorProperty("view.caretColor"));
 		painter.setSelectionColor(
-			jEdit.getColorProperty("view.selectionColor"));
+				jEdit.getColorProperty("view.selectionColor"));
 		painter.setMultipleSelectionColor(
-			jEdit.getColorProperty("view.multipleSelectionColor"));
+				jEdit.getColorProperty("view.multipleSelectionColor"));
 		painter.setBackground(
-			jEdit.getColorProperty("view.bgColor"));
+				jEdit.getColorProperty("view.bgColor"));
 		painter.setForeground(
-			jEdit.getColorProperty("view.fgColor"));
+				jEdit.getColorProperty("view.fgColor"));
 		painter.setBlockCaretEnabled(jEdit.getBooleanProperty(
-			"view.blockCaret"));
+				"view.blockCaret"));
 		painter.setThickCaretEnabled(jEdit.getBooleanProperty(
-			"view.thickCaret"));
+				"view.thickCaret"));
 		painter.setLineHighlightEnabled(jEdit.getBooleanProperty(
-			"view.lineHighlight"));
+				"view.lineHighlight"));
 		painter.setLineHighlightColor(
-			jEdit.getColorProperty("view.lineHighlightColor"));
+				jEdit.getColorProperty("view.lineHighlightColor"));
 		painter.setAntiAlias(new AntiAlias(jEdit.getProperty("view.antiAlias")));
 		painter.setFractionalFontMetricsEnabled(jEdit.getBooleanProperty(
-			"view.fracFontMetrics"));
+				"view.fracFontMetrics"));
 
 		painter.setSelectionFgColor(jEdit.getColorProperty(
-			"view.selectionFgColor"));
+				"view.selectionFgColor"));
 		painter.setSelectionFgColorEnabled(jEdit.getBooleanProperty(
-			"view.selectionFg"));
+				"view.selectionFg"));
 
 		String defaultFont = jEdit.getProperty("view.font");
 		int defaultFontSize = jEdit.getIntegerProperty("view.fontsize",12);
@@ -1047,8 +1047,8 @@ public class EditPane extends JPanel implements BufferSetListener
 		for(int i = 0; i <= 3; i++)
 		{
 			foldLineStyle[i] = SyntaxUtilities.parseStyle(
-				jEdit.getProperty("view.style.foldLine." + i),
-				defaultFont,defaultFontSize, true);
+					jEdit.getProperty("view.style.foldLine." + i),
+					defaultFont,defaultFontSize, true);
 		}
 		painter.setFoldLineStyle(foldLineStyle);
 	} //}}}
@@ -1104,7 +1104,7 @@ public class EditPane extends JPanel implements BufferSetListener
 			{
 				// The closed buffer is the current buffer
 				Buffer newBuffer = recentBuffer != null ?
-					recentBuffer : _buffer.getPrev();
+						recentBuffer : _buffer.getPrev();
 
 				if(newBuffer != null && !newBuffer.isClosed())
 				{
@@ -1193,21 +1193,23 @@ public class EditPane extends JPanel implements BufferSetListener
 
 			switch(flag)
 			{
-			case OVERWRITE_CHANGED:
-				status.setMessageAndClear(
-					jEdit.getProperty("view.status.overwrite-changed",
-					new Integer[] { value ? 1 : 0 }));
-				break;
-			case MULTI_SELECT_CHANGED:
-				status.setMessageAndClear(
-					jEdit.getProperty("view.status.multi-changed",
-					new Integer[] { value ? 1 : 0 }));
-				break;
-			case RECT_SELECT_CHANGED:
-				status.setMessageAndClear(
-					jEdit.getProperty("view.status.rect-select-changed",
-					new Integer[] { value ? 1 : 0 }));
-				break;
+				case OVERWRITE_CHANGED:
+					status.setMessageAndClear(
+							jEdit.getProperty("view.status.overwrite-changed",
+									new Integer[] { value ? 1 : 0 }));
+					break;
+				case MULTI_SELECT_CHANGED:
+					status.setMessageAndClear(
+							jEdit.getProperty("view.status.multi-changed",
+									new Integer[] { value ? 1 : 0 }));
+					break;
+				case RECT_SELECT_CHANGED:
+					status.setMessageAndClear(
+							jEdit.getProperty("view.status.rect-select-changed",
+									new Integer[] { value ? 1 : 0 }));
+					break;
+				default:
+					break;
 			}
 
 			status.updateMiscStatus();
@@ -1220,8 +1222,8 @@ public class EditPane extends JPanel implements BufferSetListener
 				return;
 
 			status.setMessageAndClear(jEdit.getProperty(
-				"view.status.bracket",new Object[] {
-				line, text }));
+					"view.status.bracket",new Object[] {
+							line, text }));
 		}
 
 		public void narrowActive(org.gjt.sp.jedit.textarea.TextArea textArea)
@@ -1231,7 +1233,7 @@ public class EditPane extends JPanel implements BufferSetListener
 				return;
 
 			status.setMessageAndClear(
-				jEdit.getProperty("view.status.narrow"));
+					jEdit.getProperty("view.status.narrow"));
 		}
 	} //}}}
 
@@ -1268,7 +1270,7 @@ public class EditPane extends JPanel implements BufferSetListener
 		//{{{ paintValidLine() method
 		@Override
 		public void paintValidLine(Graphics2D gfx, int screenLine,
-			int physicalLine, int start, int end, int y)
+								   int physicalLine, int start, int end, int y)
 		{
 			if(isMarkerHighlightEnabled())
 			{
