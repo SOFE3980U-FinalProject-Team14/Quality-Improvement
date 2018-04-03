@@ -75,12 +75,12 @@ public class PrinterDialog extends JDialog implements ListSelectionListener
     private boolean canceled = false;
     private Map<String, String> messageMap;
     private PageSetupPanel pageSetupPanel;
-    public static int ALL = 0;
-    public static int ODD = 1;
-    public static int EVEN = 2;
-    public static int RANGE = 3;
-    public static int CURRENT_PAGE = 4;
-    public static int SELECTION = 5;
+    public static final int ALL = 0;
+    public static final int ODD = 1;
+    public static final int EVEN = 2;
+    public static final int RANGE = 3;
+    public static final int CURRENT_PAGE = 4;
+    public static final int SELECTION = 5;
     public static int onlyPrintPages = ALL;
     private int printRangeType = ALL;
     private DocFlavor DOC_FLAVOR = DocFlavor.SERVICE_FORMATTED.PRINTABLE;
@@ -231,7 +231,7 @@ public class PrinterDialog extends JDialog implements ListSelectionListener
                 try
                 {
                     PageRanges mergedRanges = mergeRanges( pr );
-                    if (mergedRanges != null) 
+                    if (mergedRanges != null)
                     {
                         PrinterDialog.this.attributes.add( mergedRanges );
                     }
@@ -282,7 +282,7 @@ public class PrinterDialog extends JDialog implements ListSelectionListener
                 try
                 {
                     PageRanges mergedRanges = mergeRanges( pr );
-                    if (mergedRanges != null) 
+                    if (mergedRanges != null)
                     {
                         PrinterDialog.this.attributes.add( mergedRanges );
                     }
@@ -735,7 +735,7 @@ public class PrinterDialog extends JDialog implements ListSelectionListener
 
 
         abstract AttributeSet getAttributes()
-        ;
+                ;
     }
 
 
@@ -765,31 +765,31 @@ public class PrinterDialog extends JDialog implements ListSelectionListener
 
             JPanel rangePanel = new JPanel( new GridLayout( 4, 2, 6, 6 ) );
             rangePanel.setBorder( BorderFactory.createCompoundBorder(
-            BorderFactory.createTitledBorder( BorderFactory.createEtchedBorder(), jEdit.getProperty( "print.dialog.Range", "Range" ) ),
-            BorderFactory.createEmptyBorder( 11, 11, 11, 11 ) ) );
+                    BorderFactory.createTitledBorder( BorderFactory.createEtchedBorder(), jEdit.getProperty( "print.dialog.Range", "Range" ) ),
+                    BorderFactory.createEmptyBorder( 11, 11, 11, 11 ) ) );
             allPages = new JRadioButton( jEdit.getProperty( "print.dialog.All_pages", "All pages" ) );
             allPages.setSelected( true );
             allPages.addActionListener( new ActionListener()
-            {
+                                        {
 
-                    public void actionPerformed( ActionEvent ae )
-                    {
-                        pagesField.setEnabled( pages.isSelected() );
-                    }
-                }
+                                            public void actionPerformed( ActionEvent ae )
+                                            {
+                                                pagesField.setEnabled( pages.isSelected() );
+                                            }
+                                        }
             );
 
             pages = new JRadioButton( jEdit.getProperty( "print.dialog.Pages", "Pages" ) + ':' );
             pagesField = new JTextField();
             pagesField.setEnabled( false );
             pages.addActionListener( new ActionListener()
-            {
+                                     {
 
-                    public void actionPerformed( ActionEvent ae )
-                    {
-                        pagesField.setEnabled( pages.isSelected() );
-                    }
-                }
+                                         public void actionPerformed( ActionEvent ae )
+                                         {
+                                             pagesField.setEnabled( pages.isSelected() );
+                                         }
+                                     }
             );
 
             currentPage = new JRadioButton( jEdit.getProperty( "print.dialog.Current_page", "Current page" ) );
@@ -810,21 +810,21 @@ public class PrinterDialog extends JDialog implements ListSelectionListener
 
             JPanel copiesPanel = new JPanel( new GridLayout( 3, 2, 6, 6 ) );
             copiesPanel.setBorder( BorderFactory.createCompoundBorder(
-            BorderFactory.createTitledBorder( BorderFactory.createEtchedBorder(), jEdit.getProperty( "print.dialog.Copies", "Copies" ) ),
-            BorderFactory.createEmptyBorder( 11, 11, 11, 11 ) ) );
+                    BorderFactory.createTitledBorder( BorderFactory.createEtchedBorder(), jEdit.getProperty( "print.dialog.Copies", "Copies" ) ),
+                    BorderFactory.createEmptyBorder( 11, 11, 11, 11 ) ) );
             JLabel copiesLabel = new JLabel( jEdit.getProperty( "print.dialog.Copies", "Copies" + ':' ) );
             copies = new JSpinner( new SpinnerNumberModel( 1, 1, 999, 1 ) );
             copies.addChangeListener( new ChangeListener()
             {
 
-                    public void stateChanged( ChangeEvent e )
-                    {
-                        JSpinner spinner = ( JSpinner )e.getSource();
-                        int value = ( int )spinner.getValue();
-                        collate.setEnabled( value > 1 );
-                        collate.setSelected( value > 1 );
-                    }
-                } );
+                public void stateChanged( ChangeEvent e )
+                {
+                    JSpinner spinner = ( JSpinner )e.getSource();
+                    int value = ( int )spinner.getValue();
+                    collate.setEnabled( value > 1 );
+                    collate.setSelected( value > 1 );
+                }
+            } );
             collate = new JCheckBox( jEdit.getProperty( "print.dialog.Collate", "Collate" ) );
             collate.setSelected( false );
             collate.setEnabled( false );
@@ -924,10 +924,10 @@ public class PrinterDialog extends JDialog implements ListSelectionListener
 
 
             public Component getListCellRendererComponent( JList<? extends PrintService> list,
-            PrintService value,
-            int index,
-            boolean isSelected,
-            boolean cellHasFocus )
+                                                           PrintService value,
+                                                           int index,
+                                                           boolean isSelected,
+                                                           boolean cellHasFocus )
             {
 
                 setText( value == null ? "" : value.getName() );
@@ -976,7 +976,7 @@ public class PrinterDialog extends JDialog implements ListSelectionListener
             super();
             JPanel layoutPanel = new JPanel( new VariableGridLayout( VariableGridLayout.FIXED_NUM_COLUMNS, 2, 6, 6 ) );
             layoutPanel.setBorder( BorderFactory.createCompoundBorder(
-            BorderFactory.createTitledBorder( BorderFactory.createEtchedBorder(), jEdit.getProperty( "print.dialog.Layout", "Layout" ) ), BorderFactory.createEmptyBorder( 11, 11, 11, 11 ) ) );
+                    BorderFactory.createTitledBorder( BorderFactory.createEtchedBorder(), jEdit.getProperty( "print.dialog.Layout", "Layout" ) ), BorderFactory.createEmptyBorder( 11, 11, 11, 11 ) ) );
             sides = new JComboBox<Sides>();
             sides.setEnabled( false );
             sides.setRenderer( new SidesCellRenderer() );
@@ -984,17 +984,17 @@ public class PrinterDialog extends JDialog implements ListSelectionListener
             pagesPerSide = new JComboBox<NumberUp>();
             pagesPerSide.setEnabled( false );
             pagesPerSide.addActionListener( new ActionListener()
-            {
+                                            {
 
-                    public void actionPerformed( ActionEvent ae )
-                    {
-                        NumberUp nu = ( NumberUp )pagesPerSide.getSelectedItem();
-                        if ( nu != null && nu.getValue() == 1 )
-                        {
-                            pageOrdering.setEnabled( false );
-                        }
-                    }
-                }
+                                                public void actionPerformed( ActionEvent ae )
+                                                {
+                                                    NumberUp nu = ( NumberUp )pagesPerSide.getSelectedItem();
+                                                    if ( nu != null && nu.getValue() == 1 )
+                                                    {
+                                                        pageOrdering.setEnabled( false );
+                                                    }
+                                                }
+                                            }
             );
 
             // disable this when pagesPerSide is 1
@@ -1030,26 +1030,26 @@ public class PrinterDialog extends JDialog implements ListSelectionListener
             paperSize = new JComboBox<String>();
             paperSize.setEnabled( false );
             paperSize.addActionListener( new ActionListener()
-            {
+                                         {
 
-                    public void actionPerformed( ActionEvent ae )
-                    {
-                        PageSetupPanel.this.setDefaultMargins();
-                    }
-                }
+                                             public void actionPerformed( ActionEvent ae )
+                                             {
+                                                 PageSetupPanel.this.setDefaultMargins();
+                                             }
+                                         }
             );
 
             orientation = new JComboBox<OrientationRequested>();
             orientation.setEnabled( false );
             orientation.setRenderer( new OrientationCellRenderer() );
             orientation.addActionListener( new ActionListener()
-            {
+                                           {
 
-                    public void actionPerformed( ActionEvent ae )
-                    {
-                        PageSetupPanel.this.setDefaultMargins();
-                    }
-                }
+                                               public void actionPerformed( ActionEvent ae )
+                                               {
+                                                   PageSetupPanel.this.setDefaultMargins();
+                                               }
+                                           }
             );
 
             paperPanel.add( new JLabel( jEdit.getProperty( "print.dialog.Paper_source", "Paper source" ) + ':' ) );
@@ -1111,10 +1111,10 @@ public class PrinterDialog extends JDialog implements ListSelectionListener
 
 
             public Component getListCellRendererComponent( JList<? extends Sides> list,
-            Sides value,
-            int index,
-            boolean isSelected,
-            boolean cellHasFocus )
+                                                           Sides value,
+                                                           int index,
+                                                           boolean isSelected,
+                                                           boolean cellHasFocus )
             {
                 setText( value == null ? "" : getMessage( value.toString() ) );
                 return this;
@@ -1136,10 +1136,10 @@ public class PrinterDialog extends JDialog implements ListSelectionListener
 
 
             public Component getListCellRendererComponent( JList<? extends OrientationRequested> list,
-            OrientationRequested value,
-            int index,
-            boolean isSelected,
-            boolean cellHasFocus )
+                                                           OrientationRequested value,
+                                                           int index,
+                                                           boolean isSelected,
+                                                           boolean cellHasFocus )
             {
                 setText( value == null ? "" : getMessage( value.toString() ) );
                 return this;
@@ -1161,10 +1161,10 @@ public class PrinterDialog extends JDialog implements ListSelectionListener
 
 
             public Component getListCellRendererComponent( JList<? extends Finishings> list,
-            Finishings value,
-            int index,
-            boolean isSelected,
-            boolean cellHasFocus )
+                                                           Finishings value,
+                                                           int index,
+                                                           boolean isSelected,
+                                                           boolean cellHasFocus )
             {
                 setText( value == null ? "" : getMessage( value.toString() ) );
                 return this;
@@ -1554,8 +1554,8 @@ public class PrinterDialog extends JDialog implements ListSelectionListener
             // when to print panel
             JPanel printPanel = new JPanel( new VariableGridLayout( VariableGridLayout.FIXED_NUM_COLUMNS, 2, 6, 6 ) );
             printPanel.setBorder( BorderFactory.createCompoundBorder(
-            BorderFactory.createTitledBorder( BorderFactory.createEtchedBorder(), jEdit.getProperty( "print.dialog.Print_Document", "Print Document" ) ),
-            BorderFactory.createEmptyBorder( 11, 11, 11, 11 ) ) );
+                    BorderFactory.createTitledBorder( BorderFactory.createEtchedBorder(), jEdit.getProperty( "print.dialog.Print_Document", "Print Document" ) ),
+                    BorderFactory.createEmptyBorder( 11, 11, 11, 11 ) ) );
 
             // print now
             nowButton = new JRadioButton( jEdit.getProperty( "print.dialog.Now", "Now" ) );
@@ -1565,13 +1565,13 @@ public class PrinterDialog extends JDialog implements ListSelectionListener
             atButton = new JRadioButton( jEdit.getProperty( "print.dialog.At", "At" ) );
             atButton.setEnabled( true );
             atButton.addActionListener( new ActionListener()
-            {
+                                        {
 
-                    public void actionPerformed( ActionEvent ae )
-                    {
-                        when.setEnabled( atButton.isSelected() );
-                    }
-                }
+                                            public void actionPerformed( ActionEvent ae )
+                                            {
+                                                when.setEnabled( atButton.isSelected() );
+                                            }
+                                        }
             );
             Calendar calendar = Calendar.getInstance( Locale.getDefault() );
             Date initialDate = calendar.getTime();
@@ -1739,10 +1739,10 @@ public class PrinterDialog extends JDialog implements ListSelectionListener
 
 
             public Component getListCellRendererComponent( JList<? extends PrintQuality> list,
-            PrintQuality value,
-            int index,
-            boolean isSelected,
-            boolean cellHasFocus )
+                                                           PrintQuality value,
+                                                           int index,
+                                                           boolean isSelected,
+                                                           boolean cellHasFocus )
             {
                 setText( value == null ? "" : getMessage( value.toString() ) );
                 return this;
@@ -1764,10 +1764,10 @@ public class PrinterDialog extends JDialog implements ListSelectionListener
 
 
             public Component getListCellRendererComponent( JList<? extends Chromaticity> list,
-            Chromaticity value,
-            int index,
-            boolean isSelected,
-            boolean cellHasFocus )
+                                                           Chromaticity value,
+                                                           int index,
+                                                           boolean isSelected,
+                                                           boolean cellHasFocus )
             {
                 setText( value == null ? "" : getMessage( value.toString() ) );
                 return this;
@@ -1817,7 +1817,7 @@ public class PrinterDialog extends JDialog implements ListSelectionListener
             /* Print Folds */
             printFolds = new JCheckBox( jEdit.getProperty( "options.print.folds" ) );
             printFolds.setSelected( jEdit.getBooleanProperty( "print.folds", true ) );
-            
+
             JPanel content = new JPanel( new VariableGridLayout( VariableGridLayout.FIXED_NUM_COLUMNS, 2, 6, 6 ) );
             content.add( new JLabel(jEdit.getProperty( "options.print.font" ) ) );
             content.add( font );
