@@ -142,11 +142,13 @@ public class StringList extends ArrayList<String>
 	// {{{ main()
 	public static void main(String args[])
 	{
+	    /* used for testing
 		String teststr = "a,b,c,d,e,f";
-		StringList.split(teststr, ",");
-		//String joinstr = sl.join(",");
-		// assert(teststr.equals(joinstr));
+		StringList sl = StringList.split(teststr, ",");
+		String joinstr = sl.join("*");
+		assert(teststr.equals(joinstr));
 		System.out.println("Test Passed");
+		*/
 
 	}// }}}
 	private static final long serialVersionUID = -6408080298368668262L;
