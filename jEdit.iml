@@ -13,7 +13,7 @@
       <excludeFolder url="file://$MODULE_DIR$/org/gjt/sp/jedit/bsh/commands" />
       <excludeFolder url="file://$MODULE_DIR$/textarea" />
     </content>
-    <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="TEST" name="Test Dependencies" level="project" />
     <orderEntry type="library" name="Compile Dependencies" level="project" />

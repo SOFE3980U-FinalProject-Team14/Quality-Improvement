@@ -156,6 +156,7 @@ public class SplitConfigParser
                                         case '"':
                                                 tokenStack.push(st.sval);
                                                 break;
+                                        default: break;
                                 }
                                 token = st.nextToken();
                         }

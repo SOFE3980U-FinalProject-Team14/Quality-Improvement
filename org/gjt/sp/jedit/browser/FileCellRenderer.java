@@ -264,6 +264,7 @@ public class FileCellRenderer extends DefaultTableCellRenderer
 					x + level * LEVEL_WIDTH + 2,
 					y + (height - COLLAPSE_ICON.getIconHeight()) / 2);
 				break;
+			default: break;
 			}
 		} //}}}
 

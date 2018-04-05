@@ -2201,6 +2201,7 @@ public class GUIUtilities
 				case Frame.NORMAL:
 					saveGeometry(frame,parent,name );
 					break;
+				default: break;
 			}
 		} //}}}
 		

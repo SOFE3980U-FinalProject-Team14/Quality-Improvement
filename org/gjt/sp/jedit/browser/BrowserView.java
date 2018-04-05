@@ -527,6 +527,7 @@ class BrowserView extends JPanel
 						showFilePopup(getSelectedFiles(),table,pos);
 					}
 					break;
+				default: break;
 			}
 		}
 	} //}}}
@@ -723,6 +724,7 @@ class BrowserView extends JPanel
 						}
 					}
 					break;
+					default: break;
 /* These actions don't work because they look at the EntryTable for the current selected
  * 	item. We need actions that look at the parentDirectoryList item instead.
  * 					
@@ -740,7 +742,8 @@ class BrowserView extends JPanel
 					evt.consume();
 					ea = ac.getAction("vfs.browser.new-directory");
 					ac.invokeAction(evt, ea);
-					break; */					
+					break; */
+
 				}
 			}
 			else if(evt.getID() == KeyEvent.KEY_TYPED)
@@ -773,6 +776,7 @@ class BrowserView extends JPanel
 							.getDirectory());
 					}
 					break;
+					default: break;
 				}
 			}
 			if (!evt.isConsumed())

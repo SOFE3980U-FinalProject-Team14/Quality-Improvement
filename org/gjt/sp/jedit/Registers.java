@@ -533,7 +533,18 @@ public class Registers
 		if(!loaded)
 			loadRegisters();
 		return registers;
+
 	} //}}}
+	public static Register[] getRegistersCpy()
+	{
+		if(!loaded)
+			loadRegisters();
+		Register[] registerCpy = new Register[registers.length];
+		registerCpy= registers.clone();
+		return registerCpy;
+
+	} //}}}
+
 
 	//{{{ getRegisterNameString() method
 	/**
@@ -611,7 +622,7 @@ public class Registers
 	 */
 	private static boolean modified;
 
-	private Registers() {}
+	public Registers() {}
 
 	static
 	{
