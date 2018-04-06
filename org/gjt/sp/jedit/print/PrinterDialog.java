@@ -482,7 +482,7 @@ public class PrinterDialog extends JDialog implements ListSelectionListener
                     pages.add( pageIndex );
                 }
                 else
-                if ( pageIndex % 2 == 1 && onlyPrintPages == ODD )
+                if ( pageIndex % 2 != 0 && onlyPrintPages == ODD )
                 {
                     pages.add( pageIndex );
                 }

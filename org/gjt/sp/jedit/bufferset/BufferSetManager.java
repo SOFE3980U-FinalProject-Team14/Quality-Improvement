@@ -61,7 +61,7 @@ public class BufferSetManager
 	@EBHandler
 	public void handleEditPaneUpdate(EditPaneUpdate message)
 	{
-		if (message.getWhat() == EditPaneUpdate.DESTROYED)
+		if (message.getWhat().equals(EditPaneUpdate.DESTROYED))
 		{
 			EditPane editPane = message.getEditPane();
 			BufferSet bufferSet = editPane.getBufferSet();

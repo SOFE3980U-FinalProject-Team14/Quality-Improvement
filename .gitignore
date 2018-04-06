@@ -1,5 +1,5 @@
-build\
-dist\
-lib\
-org\gjt\sp\jedit\bsh\commands\
-textarea\
+
+.idea/workspace.xml
+.idea/*
+build/settings/*
+.idea/workspace.xml

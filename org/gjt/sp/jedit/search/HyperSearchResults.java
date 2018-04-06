@@ -188,9 +188,9 @@ public class HyperSearchResults extends JPanel implements DefaultFocusComponent
 	{
 		Buffer buffer = bmsg.getBuffer();
 		Object what = bmsg.getWhat();
-		if(what == BufferUpdate.LOADED)
+		if(what.equals(BufferUpdate.LOADED))
 			visitBuffers(new BufferLoadedVisitor(),buffer);
-		else if(what == BufferUpdate.CLOSED)
+		else if(what.equals(BufferUpdate.CLOSED))
 			visitBuffers(new BufferClosedVisitor(),buffer);
 	} //}}}
 

@@ -982,7 +982,7 @@ public class Macros
 		@EBHandler
 		public void handleBufferUpdate(BufferUpdate bmsg)
 		{
-			if(bmsg.getWhat() == BufferUpdate.CLOSED && bmsg.getBuffer() == buffer)
+			if(bmsg.getWhat().equals(BufferUpdate.CLOSED) && bmsg.getBuffer() == buffer)
 			{
 					stopRecording(view);
 			}

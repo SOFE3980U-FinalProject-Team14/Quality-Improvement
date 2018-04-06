@@ -82,7 +82,7 @@ public class JEditSwingTrayIcon extends JEditTrayIcon implements EBComponent
 	public void handleMessage(EBMessage message)
 	{
 		if (message instanceof EditPaneUpdate && 
-			(((EditPaneUpdate)message).getWhat() == EditPaneUpdate.BUFFER_CHANGED)) {
+			(((EditPaneUpdate)message).getWhat().equals(EditPaneUpdate.BUFFER_CHANGED))) {
 			StringList sl = new StringList();
 			for (View v: jEdit.getViews()) 
 				sl.add(v.getTitle());					
