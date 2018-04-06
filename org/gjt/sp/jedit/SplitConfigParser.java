@@ -18,7 +18,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
- 
+
 package org.gjt.sp.jedit;
 
 import java.io.IOException;
@@ -30,66 +30,66 @@ import java.util.Deque;
 import java.util.List;
 
 /** Class used by PerspectiveManager to parse SplitConfig strings.
-    May also be used by plugins. 
-    @since jEdit 4.4
-*/
-public class SplitConfigParser 
+ May also be used by plugins.
+ @since jEdit 4.4
+ */
+public class SplitConfigParser
 {
 
-	//{{{ private members
+        //{{{ private members
         private String splitConfig;
 
         private boolean includeSplits = true;
         private boolean includeFiles = true;
         private boolean includeRemotes = false;
         //}}}
-        
+
         //{{{ SplitConfigParser constructor
-	/**
-	 * @param splitConfig The string to parse and adjust.
-	 */
-        public SplitConfigParser(String splitConfig) 
+        /**
+         * @param splitConfig The string to parse and adjust.
+         */
+        public SplitConfigParser(String splitConfig)
         {
                 this.splitConfig = splitConfig == null ? "" : splitConfig;
         }
         //}}}
 
         //{{{ Setters
-	/**
-	 * @param b If true, retain any splits in the split configuration.
-	 */
-        public void setIncludeSplits(boolean b) 
+        /**
+         * @param b If true, retain any splits in the split configuration.
+         */
+        public void setIncludeSplits(boolean b)
         {
                 includeSplits = b;
         }
 
-	/**
-	 * @param b If true, retain any file names found in the split configuration.
-	 */
-        public void setIncludeFiles(boolean b) 
+        /**
+         * @param b If true, retain any file names found in the split configuration.
+         */
+        public void setIncludeFiles(boolean b)
         {
                 includeFiles = b;
         }
 
-	/**
-	 * @param b If true, and if include files is true, then retain any remote file
-	 * names found in the split configuration.
-	 */
-        public void setIncludeRemoteFiles(boolean b) 
+        /**
+         * @param b If true, and if include files is true, then retain any remote file
+         * names found in the split configuration.
+         */
+        public void setIncludeRemoteFiles(boolean b)
         {
                 includeRemotes = includeFiles && b;
         }
         //}}}
 
         //{{{ parse()
-	/**
-	 * Parses the given split configuration string and removes splits, file names,
-	 * and remote file names bases on the settings for this parser.
-	 * @return The split configuration string adjusted for user preferences.
-	 */
-        public String parse() 
+        /**
+         * Parses the given split configuration string and removes splits, file names,
+         * and remote file names bases on the settings for this parser.
+         * @return The split configuration string adjusted for user preferences.
+         */
+        public String parse()
         {
-                if (splitConfig == null || splitConfig.length() == 0) 
+                if (splitConfig == null || splitConfig.length() == 0)
                 {
                         return "";
                 }
@@ -100,7 +100,7 @@ public class SplitConfigParser
                 BufferSet bufferset = new BufferSet(includeFiles, includeRemotes);
                 boolean haveSplit = false;
 
-                try 
+                try
                 {
                         StreamTokenizer st = new StreamTokenizer(new StringReader(splitConfig));
                         st.whitespaceChars(0, ' ');
@@ -111,16 +111,16 @@ public class SplitConfigParser
 
                         int token = st.nextToken();
 
-                        while (token != StreamTokenizer.TT_EOF) 
+                        while (token != StreamTokenizer.TT_EOF)
                         {
-                                switch (token) 
+                                switch (token)
                                 {
                                         case StreamTokenizer.TT_WORD:
-                                                if ("vertical".equals(st.sval) || "horizontal".equals(st.sval)) 
+                                                if ("vertical".equals(st.sval) || "horizontal".equals(st.sval))
                                                 {
-							// handle split -- create new Split, populate it with
-							// the first 2 items in the split stack.
-                                                        if (includeSplits) 
+                                                        // handle split -- create new Split, populate it with
+                                                        // the first 2 items in the split stack.
+                                                        if (includeSplits)
                                                         {
                                                                 Object right = splitStack.pop();
                                                                 Object left = splitStack.pop();
@@ -133,17 +133,17 @@ public class SplitConfigParser
                                                                 splitStack.push(split);
                                                                 haveSplit = true;
                                                         }
-                                                } 
-                                                else if ("buffer".equals(st.sval) || "buff".equals(st.sval)) 
+                                                }
+                                                else if ("buffer".equals(st.sval) || "buff".equals(st.sval))
                                                 {
-							// add to buffer set
+                                                        // add to buffer set
                                                         Object filename = tokenStack.pop();
                                                         bufferset.addBuffer(filename.toString());
-                                                } 
-                                                else if ("bufferset".equals(st.sval)) 
+                                                }
+                                                else if ("bufferset".equals(st.sval))
                                                 {
-							// close out current buffer set, push to split stack,
-							// create new buffer set.
+                                                        // close out current buffer set, push to split stack,
+                                                        // create new buffer set.
                                                         Object scope = tokenStack.pop();
                                                         bufferset.setScope(scope.toString());
                                                         splitStack.push(bufferset);
@@ -161,23 +161,23 @@ public class SplitConfigParser
                                 token = st.nextToken();
                         }
                         StringBuilder sb = new StringBuilder();
-			// check if splitStack has any Split objects, if not, collapse all
-			// BufferSets to a single BufferSet.
-                        if (haveSplit) 
+                        // check if splitStack has any Split objects, if not, collapse all
+                        // BufferSets to a single BufferSet.
+                        if (haveSplit)
                         {
-                                while (!splitStack.isEmpty()) 
+                                while (!splitStack.isEmpty())
                                 {
                                         sb.append(splitStack.pop().toString()).append(' ');
                                 }
-                        } 
-                        else 
+                        }
+                        else
                         {
-                        	// no splits, only buffersets
+                                // no splits, only buffersets
                                 BufferSet allBuffers = new BufferSet();
-                                while (!splitStack.isEmpty()) 
+                                while (!splitStack.isEmpty())
                                 {
                                         BufferSet bs = (BufferSet) splitStack.pop();
-                                        if (allBuffers.getScope() == null) 
+                                        if (allBuffers.getScope() == null)
                                         {
                                                 allBuffers.setScope(bs.getScope());
                                         }
@@ -188,11 +188,11 @@ public class SplitConfigParser
                         // need the replaceAll to make sure Windows backslashes
                         // don't get unescaped prematurely
                         return sb.toString().replaceAll("\\\\", "\\\\\\\\").trim();
-                } 
-                catch (IOException e) 
+                }
+                catch (IOException e)
                 {
-			// StringReader will not throw an IOException as long as the
-			// string it is reading is not null, which won't happen here.
+                        // StringReader will not throw an IOException as long as the
+                        // string it is reading is not null, which won't happen here.
                 }
                 return splitConfig;
         }
@@ -200,7 +200,7 @@ public class SplitConfigParser
 
         //{{{ BufferSet
         // Represents a set of file names for buffers.
-        private class BufferSet 
+        private static class BufferSet
         {
                 List<String> buffers = new ArrayList<String>();
                 String scope = null;
@@ -210,67 +210,67 @@ public class SplitConfigParser
 
                 public BufferSet() {}
 
-                public BufferSet(boolean includeFiles, boolean includeRemotes) 
+                public BufferSet(boolean includeFiles, boolean includeRemotes)
                 {
                         this.includeFiles = includeFiles;
                         this.includeRemotes = includeRemotes;
                 }
 
-                public void addBuffer(String s) 
+                public void addBuffer(String s)
                 {
-                        if (includeFiles) 
+                        if (includeFiles)
                         {
-                        	if (includeRemotes) 
-                        	{
-                        		buffers.add(s);
-                        		return;
-                        	}
-                                if (!isRemote(s)) 
+                                if (includeRemotes)
+                                {
+                                        buffers.add(s);
+                                        return;
+                                }
+                                if (!isRemote(s))
                                 {
                                         buffers.add(s);
                                 }
                         }
                 }
 
-                public List<String> getBuffers() 
+                public List<String> getBuffers()
                 {
                         return buffers;
                 }
 
-                public void addBufferSet(BufferSet bs) 
+                public void addBufferSet(BufferSet bs)
                 {
                         buffers.addAll(bs.getBuffers());
                 }
 
-                public void setScope(String s) 
+                public void setScope(String s)
                 {
                         scope = s;
                 }
 
-                public String getScope() 
+                public String getScope()
                 {
                         return scope;
                 }
 
-                public String toString() 
+                public String toString()
                 {
                         StringBuilder sb = new StringBuilder();
-                        if (buffers.size() == 0) 
+                        if (buffers.size() == 0)
                         {
                                 sb.append("\"Untitled-1\" buffer ");
-                        } 
-                        else 
+                        }
+                        else
                         {
-                                for (int i = 0; i < buffers.size(); i++) 
+                                for (int i = 0; i < buffers.size(); i++)
                                 {
                                         sb.append('\"').append(buffers.get(i)).append('\"');
                                         sb.append(i == 0 ? " buffer " : " buff ");
                                 }
                         }
-                        if (scope == null) 
+                        if (scope == null)
                         {
-                        	scope = "view";
-                        } 
+                                scope = "view";
+                        }
                         sb.append('\"').append(scope).append("\" bufferset");
                         return sb.toString();
                 }
@@ -279,9 +279,9 @@ public class SplitConfigParser
                  * @return true if the uri points to a file that is remote, that is, the
                  * protocol of the give uri is something other than 'file'.
                  */
-                public boolean isRemote(String uri) 
+                public boolean isRemote(String uri)
                 {
-                        if (MiscUtilities.isURL(uri)) 
+                        if (MiscUtilities.isURL(uri))
                         {
                                 String protocol = MiscUtilities.getProtocolOfURL(uri);
                                 return !protocol.equals("file");
@@ -292,7 +292,7 @@ public class SplitConfigParser
         //}}}
 
         //{{{ Split
-        private class Split 
+        private class Split
         {
                 Object left = null;
                 Object right = null;
@@ -300,37 +300,37 @@ public class SplitConfigParser
                 int offset = 0;
 
                 // no error checking, assumes caller will pass a BufferSet or a Split
-                public void setLeft(Object left) 
+                public void setLeft(Object left)
                 {
                         this.left = left;
                 }
 
                 // no error checking, assumes caller will pass a BufferSet or a Split
-                public void setRight(Object right) 
+                public void setRight(Object right)
                 {
                         this.right = right;
                 }
 
                 // no error checking, assumes caller will send 'horizontal' or 'vertical'
-                public void setDirection(String direction) 
+                public void setDirection(String direction)
                 {
                         this.direction = direction;
                 }
 
                 // no error checking, assumes caller will send offset >= 0
-                public void setOffset(int offset) 
+                public void setOffset(int offset)
                 {
                         this.offset = offset;
                 }
 
-                public String toString() 
+                public String toString()
                 {
                         StringBuilder sb = new StringBuilder();
-                        if (left != null) 
+                        if (left != null)
                         {
                                 sb.append(left.toString()).append(' ');
                         }
-                        if (right != null) 
+                        if (right != null)
                         {
                                 sb.append(right.toString()).append(' ');
                         }

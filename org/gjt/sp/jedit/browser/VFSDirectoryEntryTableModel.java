@@ -24,6 +24,7 @@ package org.gjt.sp.jedit.browser;
 
 //{{{ Imports
 import javax.swing.table.*;
+import java.io.Serializable;
 import java.util.*;
 import org.gjt.sp.jedit.io.FileVFS;
 import org.gjt.sp.jedit.io.VFS;
@@ -409,7 +410,7 @@ vfs_attr_loop:	for(int i = 0; i < attrs.length; i++)
 	 * For sorting columns in the VFS Browser.
 	 * @since jEdit 4.3pre7
 	 */
-	static class EntryCompare implements Comparator<Entry>
+	static class EntryCompare implements Comparator<Entry>, Serializable
 	{
 		private boolean sortIgnoreCase, sortMixFilesAndDirs, sortAscending;
 		private String sortAttribute;

@@ -146,7 +146,7 @@ public class View extends JFrame implements InputHandlerProvider
 	public static final String VIEW_DOCKING_FRAMEWORK_PROPERTY = "view.docking.framework";
 	private static final String ORIGINAL_DOCKING_FRAMEWORK = "Original";
 	public static final String DOCKING_FRAMEWORK_PROVIDER_SERVICE =
-		"org.gjt.sp.jedit.gui.DockingFrameworkProvider";
+			"org.gjt.sp.jedit.gui.DockingFrameworkProvider";
 	private static DockingFrameworkProvider dockingFrameworkProvider;
 
 	//{{{ Groups
@@ -277,16 +277,16 @@ public class View extends JFrame implements InputHandlerProvider
 		{
 			String framework = getDockingFrameworkName();
 			dockingFrameworkProvider = (DockingFrameworkProvider)
-				ServiceManager.getService(
-					DOCKING_FRAMEWORK_PROVIDER_SERVICE, framework);
+					ServiceManager.getService(
+							DOCKING_FRAMEWORK_PROVIDER_SERVICE, framework);
 
 			if (dockingFrameworkProvider == null)
 			{
 				Log.log(Log.ERROR, View.class, "No docking framework " + framework +
-								   " available, using the original one");
+						" available, using the original one");
 				dockingFrameworkProvider = (DockingFrameworkProvider)
-				ServiceManager.getService(
-					DOCKING_FRAMEWORK_PROVIDER_SERVICE, ORIGINAL_DOCKING_FRAMEWORK);
+						ServiceManager.getService(
+								DOCKING_FRAMEWORK_PROVIDER_SERVICE, ORIGINAL_DOCKING_FRAMEWORK);
 			}
 		}
 		return dockingFrameworkProvider;
@@ -496,7 +496,7 @@ public class View extends JFrame implements InputHandlerProvider
 				if(SearchAndReplace.getRegexp())
 				{
 					text = SearchAndReplace.escapeRegexp(
-						text,false);
+							text,false);
 				}
 
 				HistoryModel.getModel("find").addItem(text);
@@ -626,8 +626,8 @@ public class View extends JFrame implements InputHandlerProvider
 	public void processKeyEvent(KeyEvent evt, boolean calledFromTextArea)
 	{
 		processKeyEvent(evt,calledFromTextArea
-			? TEXT_AREA
-			: VIEW);
+				? TEXT_AREA
+				: VIEW);
 	} //}}}
 
 	//{{{ processKeyEvent() method
@@ -700,9 +700,9 @@ public class View extends JFrame implements InputHandlerProvider
 		newSplitPane.setResizeWeight(0.5);
 
 		int parentSize = orientation == JSplitPane.VERTICAL_SPLIT
-			? oldEditPane.getHeight() : oldEditPane.getWidth();
+				? oldEditPane.getHeight() : oldEditPane.getWidth();
 		final int dividerPosition = (int)((parentSize
-			- newSplitPane.getDividerSize()) * 0.5);
+				- newSplitPane.getDividerSize()) * 0.5);
 		newSplitPane.setDividerLocation(dividerPosition);
 
 		if(oldParent instanceof JSplitPane)
@@ -778,7 +778,7 @@ public class View extends JFrame implements InputHandlerProvider
 			editPane.focusOnTextArea();
 		}
 		else
-			javax.swing.UIManager.getLookAndFeel().provideErrorFeedback(null); 
+			javax.swing.UIManager.getLookAndFeel().provideErrorFeedback(null);
 	} //}}}
 
 	//{{{ unsplitCurrent() method
@@ -807,7 +807,7 @@ public class View extends JFrame implements InputHandlerProvider
 			for(EditPane _editPane: getEditPanes())
 			{
 				if(GenericGUIUtilities.isAncestorOf(comp,_editPane)
-					&& _editPane != editPane)
+						&& _editPane != editPane)
 				{
 					if (scope == BufferSet.Scope.editpane)
 						mergeBufferSets(editPane, _editPane);
@@ -839,7 +839,7 @@ public class View extends JFrame implements InputHandlerProvider
 			editPane.focusOnTextArea();
 		}
 		else
-			javax.swing.UIManager.getLookAndFeel().provideErrorFeedback(null); 
+			javax.swing.UIManager.getLookAndFeel().provideErrorFeedback(null);
 	} //}}}
 
 	//{{{ resplit() method
@@ -851,18 +851,18 @@ public class View extends JFrame implements InputHandlerProvider
 	public void resplit()
 	{
 		if(lastSplitConfig == null)
-			javax.swing.UIManager.getLookAndFeel().provideErrorFeedback(null); 
+			javax.swing.UIManager.getLookAndFeel().provideErrorFeedback(null);
 		else
 			setSplitConfig(null,lastSplitConfig);
 	} //}}}
 
 	//{{{ getSplitConfig() method
 	/**
-	*   Split configurations are recorded in a simple RPN "language".
-	*   @return The split configuration, describing where splitpanes
-	*           are, which buffers are open in each EditPane, etc.
-	*
-	*/
+	 *   Split configurations are recorded in a simple RPN "language".
+	 *   @return The split configuration, describing where splitpanes
+	 *           are, which buffers are open in each EditPane, etc.
+	 *
+	 */
 	public String getSplitConfig()
 	{
 		StringBuilder splitConfig = new StringBuilder();
@@ -1211,9 +1211,9 @@ public class View extends JFrame implements InputHandlerProvider
 	public String toString()
 	{
 		return getClass().getName() + '['
-			+ (jEdit.getActiveView() == this
-			? "active" : "inactive")
-			+ ']';
+				+ (jEdit.getActiveView() == this
+				? "active" : "inactive")
+				+ ']';
 	} //}}}
 
 	//{{{ updateTitle() method
@@ -1250,7 +1250,7 @@ public class View extends JFrame implements InputHandlerProvider
 
 			Buffer buffer = buffers.get(i);
 			title.append(showFullPath && !buffer.isNewFile()
-				? buffer.getPath(true) : buffer.getName());
+					? buffer.getPath(true) : buffer.getName());
 			if(buffer.isDirty())
 				title.append(jEdit.getProperty("view.title.dirty"));
 		}
@@ -1275,7 +1275,7 @@ public class View extends JFrame implements InputHandlerProvider
 	public void showUserTitleDialog()
 	{
 		String title = JOptionPane.showInputDialog(this, jEdit.getProperty(
-			"view.title.select"));
+				"view.title.select"));
 		if (title == null)
 			return;
 		setUserTitle(title);
@@ -1339,23 +1339,23 @@ public class View extends JFrame implements InputHandlerProvider
 		mainPanel = new JPanel();
 		mainPanel.setLayout(new BorderLayout());
 		dockableWindowManager = getDockingFrameworkProvider().create(this,
-			DockableWindowFactory.getInstance(), config);
+			    DockableWindowFactory.getInstance(), config);
 		userTitle = config.title;
 		dockableWindowManager.setMainPanel(mainPanel);
 
 		topToolBars = new JPanel(new VariableGridLayout(
-			VariableGridLayout.FIXED_NUM_COLUMNS,
-			1));
+				VariableGridLayout.FIXED_NUM_COLUMNS,
+				1));
 		bottomToolBars = new JPanel(new VariableGridLayout(
-			VariableGridLayout.FIXED_NUM_COLUMNS,
-			1));
+				VariableGridLayout.FIXED_NUM_COLUMNS,
+				1));
 
 		toolBarManager = new ToolBarManager(topToolBars, bottomToolBars);
 
 		status = new StatusBar(this);
 
 		inputHandler = new DefaultInputHandler(this,(DefaultInputHandler)
-			jEdit.getInputHandler());
+				jEdit.getInputHandler());
 
 		setSplitConfig(buffer,config.splitConfig);
 
@@ -1381,9 +1381,10 @@ public class View extends JFrame implements InputHandlerProvider
 	public void updateFullScreenProps()
 	{
 		boolean alternateLayout = jEdit.getBooleanProperty(
-			"view.toolbar.alternateLayout");
+				"view.toolbar.alternateLayout");
 		boolean showMenu = jEdit.getBooleanProperty("fullScreenIncludesMenu");
-		boolean showToolbars = jEdit.getBooleanProperty("fullScreenIncludesToolbar");
+		//unused variable
+//		boolean showToolbars = jEdit.getBooleanProperty("fullScreenIncludesToolbar");
 		boolean showStatus = jEdit.getBooleanProperty("fullScreenIncludesStatus");
 		if (! showMenu)
 		{
@@ -1433,11 +1434,11 @@ public class View extends JFrame implements InputHandlerProvider
 		else
 		{
 			boolean showStatus = plainView ? jEdit.getBooleanProperty("view.status.plainview.visible") :
-				jEdit.getBooleanProperty("view.status.visible");
+					jEdit.getBooleanProperty("view.status.visible");
 			if (menuBar != null && getJMenuBar() != menuBar)
 				setJMenuBar(menuBar);
 			boolean alternateLayout = jEdit.getBooleanProperty(
-				"view.toolbar.alternateLayout");
+					"view.toolbar.alternateLayout");
 			loadToolBars();
 			if (showStatus)
 			{
@@ -1473,7 +1474,7 @@ public class View extends JFrame implements InputHandlerProvider
 			if (view != this)
 			{
 				checkingBuffers.removeAll(
-					view.getOpenBuffers());
+						view.getOpenBuffers());
 			}
 		}
 		for (Buffer buffer: checkingBuffers)
@@ -1611,7 +1612,7 @@ public class View extends JFrame implements InputHandlerProvider
 	private EditPane showBuffer(Buffer buffer, boolean focus)
 	{
 		if(editPane.getBuffer() == buffer
-			&& editPane.getTextArea().getVisibleLines() > 1)
+				&& editPane.getTextArea().getVisibleLines() > 1)
 		{
 			if (focus)
 				editPane.focusOnTextArea();
@@ -1622,8 +1623,8 @@ public class View extends JFrame implements InputHandlerProvider
 		for (EditPane ep : editPanes)
 		{
 			if (ep.getBuffer() == buffer
-				/* ignore zero-height splits, etc */
-				&& ep.getTextArea().getVisibleLines() > 1)
+					/* ignore zero-height splits, etc */
+					&& ep.getTextArea().getVisibleLines() > 1)
 			{
 				setEditPane(ep);
 				if (focus)
@@ -1641,7 +1642,7 @@ public class View extends JFrame implements InputHandlerProvider
 	 * The split config is recorded in a simple RPN "language".
 	 */
 	private static void getSplitConfig(JSplitPane splitPane,
-		StringBuilder splitConfig)
+									   StringBuilder splitConfig)
 	{
 		Component right = splitPane.getRightComponent();
 		appendToSplitConfig(splitConfig, right);
@@ -1654,8 +1655,9 @@ public class View extends JFrame implements InputHandlerProvider
 		splitConfig.append(' ');
 		splitConfig.append(splitPane.getDividerLocation());
 		splitConfig.append(' ');
-		splitConfig.append(splitPane.getOrientation()
-			== JSplitPane.VERTICAL_SPLIT ? "vertical" : "horizontal");
+		splitConfig.append(
+		        splitPane.getOrientation() == JSplitPane.VERTICAL_SPLIT ? "vertical" : "horizontal"
+                          );
 	} //}}}
 
 	//{{{ appendToSplitConfig() method
@@ -1679,7 +1681,7 @@ public class View extends JFrame implements InputHandlerProvider
 			EditPane editPane = (EditPane) component;
 			splitConfig.append('"');
 			splitConfig.append(StandardUtilities.charsToEscapes(
-				editPane.getBuffer().getPath()));
+					editPane.getBuffer().getPath()));
 			splitConfig.append("\" buffer");
 			BufferSet bufferSet = editPane.getBufferSet();
 			Buffer[] buffers = bufferSet.getAllBuffers();
@@ -1689,7 +1691,7 @@ public class View extends JFrame implements InputHandlerProvider
 				{
 					splitConfig.append(" \"");
 					splitConfig.append(StandardUtilities.charsToEscapes(
-						buffer.getPath()));
+							buffer.getPath()));
 					splitConfig.append("\" buff");
 				}
 			}
@@ -1701,7 +1703,7 @@ public class View extends JFrame implements InputHandlerProvider
 
 	//{{{ restoreSplitConfig() method
 	private Component restoreSplitConfig(Buffer buffer, String splitConfig)
-		throws IOException
+			throws IOException
 	// this is where checked exceptions piss me off. this method only uses
 	// a StringReader which can never throw an exception...
 	{
@@ -1726,7 +1728,7 @@ public class View extends JFrame implements InputHandlerProvider
 		// we create a stream tokenizer for parsing a simple
 		// stack-based language
 		StreamTokenizer st = new StreamTokenizer(new StringReader(
-			splitConfig));
+				splitConfig));
 		st.whitespaceChars(0,' ');
 		/* all printable ASCII characters */
 		st.wordChars('#','~');
@@ -1738,102 +1740,102 @@ loop:		while (true)
 		{
 			switch(st.nextToken())
 			{
-			case StreamTokenizer.TT_EOF:
-				break loop;
-			case StreamTokenizer.TT_WORD:
-				if("vertical".equals(st.sval) || "horizontal".equals(st.sval))
-				{
-					int orientation
-						= "vertical".equals(st.sval)
-						? JSplitPane.VERTICAL_SPLIT
-						: JSplitPane.HORIZONTAL_SPLIT;
-					int divider = (Integer) stack.pop();
-					Object obj1 = stack.pop();
-					Object obj2 = stack.pop();
-					// Backward compatibility with pre-bufferset versions
-					if (obj1 instanceof Buffer)
+				case StreamTokenizer.TT_EOF:
+					break loop;
+				case StreamTokenizer.TT_WORD:
+					if("vertical".equals(st.sval) || "horizontal".equals(st.sval))
 					{
-						Buffer b1 = buffer = (Buffer) obj1;
-						obj1 = editPane = createEditPane(b1);
+						int orientation
+								= "vertical".equals(st.sval)
+								? JSplitPane.VERTICAL_SPLIT
+								: JSplitPane.HORIZONTAL_SPLIT;
+						int divider = (Integer) stack.pop();
+						Object obj1 = stack.pop();
+						Object obj2 = stack.pop();
+						// Backward compatibility with pre-bufferset versions
+						if (obj1 instanceof Buffer)
+						{
+							Buffer b1 = buffer = (Buffer) obj1;
+							obj1 = editPane = createEditPane(b1);
+						}
+						if (obj2 instanceof Buffer)
+						{
+							Buffer b2 = (Buffer) obj2;
+							obj2 = createEditPane(b2);
+						}
+						stack.push(splitPane = new JSplitPane(
+								orientation,
+								(Component)obj1,
+								(Component)obj2));
+						splitPane.setOneTouchExpandable(true);
+						splitPane.setBorder(null);
+						splitPane.setMinimumSize(
+								new Dimension(0,0));
+						splitPane.setDividerLocation(divider);
 					}
-					if (obj2 instanceof Buffer)
+					else if("buffer".equals(st.sval))
 					{
-						Buffer b2 = (Buffer) obj2;
-						obj2 = createEditPane(b2);
+						Object obj = stack.pop();
+						if(obj instanceof Integer)
+						{
+							int index = (Integer) obj;
+							if(index >= 0 && index < buffers.length)
+								buffer = buffers[index];
+						}
+						else if(obj instanceof String)
+						{
+							String path = (String)obj;
+							buffer = jEdit.getBuffer(path);
+							if (buffer == null)
+							{
+								buffer = jEdit.openTemporary(jEdit.getActiveView(), null,
+										path, true, null);
+								jEdit.commitTemporary(buffer);
+							}
+						}
+
+						if(buffer == null)
+							buffer = jEdit.getFirstBuffer();
+						stack.push(buffer);
+						editPaneBuffers.add(buffer);
 					}
-					stack.push(splitPane = new JSplitPane(
-						orientation,
-						(Component)obj1,
-						(Component)obj2));
-					splitPane.setOneTouchExpandable(true);
-					splitPane.setBorder(null);
-					splitPane.setMinimumSize(
-						new Dimension(0,0));
-					splitPane.setDividerLocation(divider);
-				}
-				else if("buffer".equals(st.sval))
-				{
-					Object obj = stack.pop();
-					if(obj instanceof Integer)
+					else if ("buff".equals(st.sval))
 					{
-						int index = (Integer) obj;
-						if(index >= 0 && index < buffers.length)
-							buffer = buffers[index];
-					}
-					else if(obj instanceof String)
-					{
-						String path = (String)obj;
+						String path = (String)stack.pop();
 						buffer = jEdit.getBuffer(path);
 						if (buffer == null)
 						{
-							buffer = jEdit.openTemporary(jEdit.getActiveView(), null,
-												path, true, null);
-							jEdit.commitTemporary(buffer);
+							Log.log(Log.WARNING, this, "Buffer " + path + " doesn't exist");
+						}
+						else
+						{
+							editPaneBuffers.add(buffer);
 						}
 					}
-
-					if(buffer == null)
-						buffer = jEdit.getFirstBuffer();
-					stack.push(buffer);
-					editPaneBuffers.add(buffer);
-				}
-				else if ("buff".equals(st.sval))
-				{
-					String path = (String)stack.pop();
-					buffer = jEdit.getBuffer(path);
-					if (buffer == null)
+					else if ("bufferset".equals(st.sval))
 					{
-						Log.log(Log.WARNING, this, "Buffer " + path + " doesn't exist");
+						// pop the bufferset scope. Not used anymore but still here for compatibility
+						// with old perspectives
+						stack.pop();
+						buffer = (Buffer) stack.pop();
+						editPane = createEditPane(buffer);
+						stack.push(editPane);
+						BufferSet bufferSet = editPane.getBufferSet();
+						int i = 0;
+						for (Buffer buff : editPaneBuffers)
+						{
+							bufferSet.addBufferAt(buff,i);
+							i++;
+						}
+						editPaneBuffers.clear();
 					}
-					else
-					{
-						editPaneBuffers.add(buffer);
-					}
-				}
-				else if ("bufferset".equals(st.sval))
-				{
-					// pop the bufferset scope. Not used anymore but still here for compatibility
-					// with old perspectives
-					stack.pop();
-					buffer = (Buffer) stack.pop();
-					editPane = createEditPane(buffer);
-					stack.push(editPane);
-					BufferSet bufferSet = editPane.getBufferSet();
-					int i = 0;
-					for (Buffer buff : editPaneBuffers)
-					{
-						bufferSet.addBufferAt(buff,i);
-						i++;
-					}
-					editPaneBuffers.clear();
-				}
-				break;
-			case StreamTokenizer.TT_NUMBER:
-				stack.push((int)st.nval);
-				break;
-			case '"':
-				stack.push(st.sval);
-				break;
+					break;
+				case StreamTokenizer.TT_NUMBER:
+					stack.push((int)st.nval);
+					break;
+				case '"':
+					stack.push(st.sval);
+					break;
 			}
 		}
 
@@ -1888,7 +1890,7 @@ loop:		while (true)
 		getContentPane().remove(status);
 
 		boolean showStatus = plainView ? jEdit.getBooleanProperty("view.status.plainview.visible") :
-					jEdit.getBooleanProperty("view.status.visible");
+				jEdit.getBooleanProperty("view.status.visible");
 		if (jEdit.getBooleanProperty("view.toolbar.alternateLayout"))
 		{
 			getContentPane().add(BorderLayout.NORTH,topToolBars);
@@ -1968,8 +1970,8 @@ loop:		while (true)
 	private void loadToolBars()
 	{
 		if(!plainView && (fullScreenMode ?
-			jEdit.getBooleanProperty("fullScreenIncludesToolbar") :
-			jEdit.getBooleanProperty("view.showToolbar")))
+				jEdit.getBooleanProperty("fullScreenIncludesToolbar") :
+				jEdit.getBooleanProperty("view.showToolbar")))
 		{
 			if(toolBar != null)
 				toolBarManager.removeToolBar(toolBar);
@@ -2140,7 +2142,7 @@ loop:		while (true)
 		for (EditPane editPane: getEditPanes())
 		{
 			openBuffers.addAll(Arrays.asList(
-				editPane.getBufferSet().getAllBuffers()));
+					editPane.getBufferSet().getAllBuffers()));
 		}
 		return openBuffers;
 	} //}}}
@@ -2268,7 +2270,7 @@ loop:		while (true)
 		}
 
 		public ViewConfig(boolean plainView, String splitConfig,
-			int x, int y, int width, int height, int extState)
+						  int x, int y, int width, int height, int extState)
 		{
 			this.plainView = plainView;
 			this.splitConfig = splitConfig;
@@ -2291,9 +2293,9 @@ loop:		while (true)
 		int minWidth = jEdit.getIntegerProperty("view.minStartupWidth");
 		int minHeight = jEdit.getIntegerProperty("view.minStartupHeight");
 		return  r.x + r.width	> bounds.x + minWidth &&		// right edge at minWidth pixels on the right of the left bound
-			r.x		< bounds.x + bounds.width - minWidth &&	// left edge at minWidth pixels on the left of the right bound
-			r.y + r.height	> bounds.y + minHeight &&		// bottom edge at minHeight pixels under the top bound
-			r.y		< bounds.y + bounds.height - minHeight;	// top edge at minHeight pixels on the top of the bottom bound
+				r.x		< bounds.x + bounds.width - minWidth &&	// left edge at minWidth pixels on the left of the right bound
+				r.y + r.height	> bounds.y + minHeight &&		// bottom edge at minHeight pixels under the top bound
+				r.y		< bounds.y + bounds.height - minHeight;	// top edge at minHeight pixels on the top of the bottom bound
 	} //}}}
 
 	public void adjust(View parent, ViewConfig config)
@@ -2345,6 +2347,6 @@ loop:		while (true)
 			editPane.setCursor(cursor);
 		}
 	}//}}}
-	 //}}}
+	//}}}
 
 }

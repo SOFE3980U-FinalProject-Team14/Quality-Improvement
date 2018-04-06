@@ -123,7 +123,7 @@ public class jEdit
 		if(javaVersion.compareTo("1.8") < 0)
 		{
 			System.err.println("You are running Java version "
-				+ javaVersion + '.');
+					+ javaVersion + '.');
 			System.err.println("jEdit requires Java 1.8 or later.");
 			System.exit(1);
 		} //}}}
@@ -139,13 +139,13 @@ public class jEdit
 		// On mac, different rules (should) apply
 		if(OperatingSystem.isMacOS())
 			settingsDirectory = MiscUtilities.constructPath(
-				System.getProperty("user.home"), "Library/jEdit" );
+					System.getProperty("user.home"), "Library/jEdit" );
 		else if (OperatingSystem.isWindows())
 		{
 			String appData = System.getenv("APPDATA");
 			if (appData != null)
 				settingsDirectory = MiscUtilities.constructPath(
-					appData, "jEdit");
+						appData, "jEdit");
 		}
 		// MacOS users expect the app to keep running after all windows
 		// are closed
@@ -158,7 +158,7 @@ public class jEdit
 			{
 				Toolkit xToolkit = Toolkit.getDefaultToolkit();
 				Field awtAppClassNameField =
-					xToolkit.getClass().getDeclaredField("awtAppClassName");
+						xToolkit.getClass().getDeclaredField("awtAppClassName");
 				awtAppClassNameField.setAccessible(true);
 				awtAppClassNameField.set(xToolkit, System.getProperty("x11.wmclass", "jedit"));
 			}
@@ -271,7 +271,7 @@ public class jEdit
 				else
 				{
 					System.err.println("Unknown option: "
-						+ arg);
+							+ arg);
 					usage();
 					System.exit(1);
 				}
@@ -286,7 +286,7 @@ public class jEdit
 		if(settingsDirectory != null)
 		{
 			settingsDirectory = MiscUtilities.resolveSymlinks(
-				settingsDirectory);
+					settingsDirectory);
 		}
 
 		if(settingsDirectory != null && portFile != null)
@@ -324,13 +324,13 @@ public class jEdit
 				if(quit)
 				{
 					script = "socket.close();\n"
-						+ "jEdit.exit(null,true);\n";
+							+ "jEdit.exit(null,true);\n";
 				}
 				else
 				{
 					script = makeServerScript(wait,restore,
-						newView,newPlainView,args,
-						scriptFile);
+							newView,newPlainView,args,
+							scriptFile);
 				}
 
 				out.writeUTF(script);
@@ -348,12 +348,12 @@ public class jEdit
 				// endlessly, so log it as NOTICE, not
 				// ERROR
 				Log.log(Log.NOTICE,jEdit.class,"An error occurred"
-					+ " while connecting to the jEdit server instance.");
+						+ " while connecting to the jEdit server instance.");
 				Log.log(Log.NOTICE,jEdit.class,"This probably means that"
-					+ " jEdit crashed and/or exited abnormally");
+						+ " jEdit crashed and/or exited abnormally");
 				Log.log(Log.NOTICE,jEdit.class,"the last time it was run.");
 				Log.log(Log.NOTICE,jEdit.class,"If you don't"
-					+ " know what this means, don't worry.");
+						+ " know what this means, don't worry.");
 				Log.log(Log.NOTICE,jEdit.class,e);
 			}
 			finally
@@ -391,7 +391,7 @@ public class jEdit
 		// Windows check introduced in 5.0pre1.
 		// MacOS check introduced in 4.3.
 		if((OperatingSystem.isMacOS() || OperatingSystem.isWindows())
-			&& shouldRelocateSettings && settingsDirectory != null)
+				&& shouldRelocateSettings && settingsDirectory != null)
 		{
 			relocateSettings();
 		}
@@ -409,7 +409,7 @@ public class jEdit
 				_macrosDirectory.mkdir();
 
 			String logPath = MiscUtilities.constructPath(
-				settingsDirectory,"activity.log");
+					settingsDirectory,"activity.log");
 
 			backupSettingsFile(new File(logPath));
 
@@ -424,13 +424,13 @@ public class jEdit
 				stream.write("IMPORTANT:");
 				stream.write(lineSep);
 				stream.write("Because updating this file after "
-					+ "every log message would kill");
+						+ "every log message would kill");
 				stream.write(lineSep);
 				stream.write("performance, it will be *incomplete* "
-					+ "unless you invoke the");
+						+ "unless you invoke the");
 				stream.write(lineSep);
 				stream.write("Utilities->Troubleshooting->Update "
-					+ "Activity Log on Disk command!");
+						+ "Activity Log on Disk command!");
 				stream.write(lineSep);
 			}
 			catch(Exception e)
@@ -447,7 +447,7 @@ public class jEdit
 
 		Log.log(Log.NOTICE,jEdit.class,"jEdit version " + getVersion());
 		Log.log(Log.MESSAGE,jEdit.class,"Settings directory is "
-			+ settingsDirectory);
+				+ settingsDirectory);
 
 		//{{{ Get things rolling
 		GUIUtilities.advanceSplashProgress("init");
@@ -487,7 +487,7 @@ public class jEdit
 			{
 				background = false;
 				Log.log(Log.WARNING,jEdit.class,"You cannot specify both the"
-					+ " -background and -noserver switches");
+						+ " -background and -noserver switches");
 			}
 		} //}}}
 
@@ -1033,7 +1033,7 @@ public class jEdit
 
 		// Enable/Disable tooltips
 		ToolTipManager.sharedInstance().setEnabled(
-			jEdit.getBooleanProperty("showTooltips"));
+				jEdit.getBooleanProperty("showTooltips"));
 
 		initProxy();
 
@@ -1087,7 +1087,7 @@ public class jEdit
 		if(jEditHome != null)
 		{
 			String systemPluginDir = MiscUtilities
-				.constructPath(jEditHome,"jars");
+					.constructPath(jEditHome,"jars");
 
 			String[] list = new File(systemPluginDir).list();
 			if(list != null)
@@ -1097,12 +1097,12 @@ public class jEdit
 		if(settingsDirectory != null)
 		{
 			String userPluginDir = MiscUtilities
-				.constructPath(settingsDirectory,"jars");
+					.constructPath(settingsDirectory,"jars");
 			String[] list = new File(userPluginDir).list();
 			if(list != null)
 			{
 				getNotLoadedPluginJARs(returnValue,
-					userPluginDir,list);
+						userPluginDir,list);
 			}
 		}
 
@@ -1261,7 +1261,7 @@ public class jEdit
 	private static void addPluginJARsFromDirectory(String directory)
 	{
 		Log.log(Log.NOTICE,jEdit.class,"Loading plugins from "
-			+ directory);
+				+ directory);
 
 		File file = new File(directory);
 		if(!(file.exists() && file.isDirectory()))
@@ -1428,19 +1428,19 @@ public class jEdit
 		else
 		{
 			loadModeCatalog(MiscUtilities.constructPath(jEditHome,
-				"modes","catalog"), false, false);
+					"modes","catalog"), false, false);
 		} //}}}
 
 		//{{{ Load user catalog second so user modes override global modes.
 		if(settingsDirectory != null)
 		{
 			File userModeDir = new File(MiscUtilities.constructPath(
-				settingsDirectory,"modes"));
+					settingsDirectory,"modes"));
 			if(!userModeDir.exists())
 				userModeDir.mkdirs();
 
 			File userCatalog = new File(MiscUtilities.constructPath(
-				settingsDirectory,"modes","catalog"));
+					settingsDirectory,"modes","catalog"));
 			if(!userCatalog.exists())
 			{
 				// create dummy catalog
@@ -1615,7 +1615,7 @@ public class jEdit
 	 * @since jEdit 3.2pre10
 	 */
 	public static Buffer openFile(View view, String parent,
-		String path, boolean newFile, Hashtable<String,Object> props)
+								  String path, boolean newFile, Hashtable<String,Object> props)
 	{
 		return openFile(view == null ? null : view.getEditPane(), parent, path, newFile, props);
 	}
@@ -1650,7 +1650,7 @@ public class jEdit
 	 * @since jEdit 4.3pre17
 	 */
 	public static Buffer openFile(EditPane editPane, String parent,
-		String path, boolean newFile, Hashtable<String,Object> props)
+								  String path, boolean newFile, Hashtable<String,Object> props)
 	{
 		PerspectiveManager.setPerspectiveDirty(true);
 
@@ -1736,7 +1736,7 @@ public class jEdit
 	 * @since jEdit 3.2pre10
 	 */
 	public static Buffer openTemporary(View view, String parent,
-		String path, boolean newFile)
+									   String path, boolean newFile)
 	{
 		return openTemporary(view, parent, path, newFile, null);
 	}
@@ -1755,7 +1755,7 @@ public class jEdit
 	 * @since jEdit 4.3pre10
 	 */
 	public static Buffer openTemporary(View view, String parent,
-		String path, boolean newFile, Hashtable<String, Object> props)
+									   String path, boolean newFile, Hashtable<String, Object> props)
 	{
 		if(view != null && parent == null)
 			parent = view.getBuffer().getDirectory();
@@ -1953,8 +1953,8 @@ public class jEdit
 		{
 			Object[] args = { buffer.getName() };
 			int result = GUIUtilities.confirm(view,"notsaved",args,
-				JOptionPane.YES_NO_CANCEL_OPTION,
-				JOptionPane.WARNING_MESSAGE);
+					JOptionPane.YES_NO_CANCEL_OPTION,
+					JOptionPane.WARNING_MESSAGE);
 			if(result == JOptionPane.YES_OPTION)
 			{
 				if(!buffer.save(view,null,true))
@@ -1962,7 +1962,7 @@ public class jEdit
 
 				TaskManager.instance.waitForIoTasks();
 				if(buffer.getBooleanProperty(BufferIORequest
-					.ERROR_OCCURRED))
+						.ERROR_OCCURRED))
 				{
 					return false;
 				}
@@ -2066,9 +2066,9 @@ public class jEdit
 			int caret = _caret == null ? 0 : _caret.intValue();
 
 			BufferHistory.setEntry(buffer.getPath(),caret,
-				(Selection[])buffer.getProperty(Buffer.SELECTION),
-				buffer.getStringProperty(JEditBuffer.ENCODING),
-				buffer.getMode().getName());
+					(Selection[])buffer.getProperty(Buffer.SELECTION),
+					buffer.getStringProperty(JEditBuffer.ENCODING),
+					buffer.getMode().getName());
 		}
 
 		EditBus.send(new BufferUpdate(buffer,view,BufferUpdate.CLOSING));
@@ -2076,7 +2076,7 @@ public class jEdit
 		//FIXME: Duplicate code? Same is done in removeBufferFromList(buffer);
 		String path = buffer.getSymlinkPath();
 		if((VFSManager.getVFSForPath(path).getCapabilities()
-			& VFS.CASE_INSENSITIVE_CAP) != 0)
+				& VFS.CASE_INSENSITIVE_CAP) != 0)
 		{
 			path = path.toLowerCase();
 		}
@@ -2160,9 +2160,9 @@ public class jEdit
 				Integer _caret = (Integer)buffer.getProperty(Buffer.CARET);
 				int caret = _caret == null ? 0 : _caret.intValue();
 				BufferHistory.setEntry(buffer.getPath(),caret,
-					(Selection[])buffer.getProperty(Buffer.SELECTION),
-					buffer.getStringProperty(JEditBuffer.ENCODING),
-					buffer.getMode().getName());
+						(Selection[])buffer.getProperty(Buffer.SELECTION),
+						buffer.getStringProperty(JEditBuffer.ENCODING),
+						buffer.getMode().getName());
 			}
 
 			if(!isExiting)
@@ -2176,7 +2176,7 @@ public class jEdit
 			{
 				bufferSetManager.removeBuffer(buffer);
 				EditBus.send(new BufferUpdate(buffer,view,
-					BufferUpdate.CLOSED));
+						BufferUpdate.CLOSED));
 			}
 			if(jEdit.getBooleanProperty("persistentMarkers"))
 				buffer.updateMarkersFile(view);
@@ -2232,10 +2232,10 @@ public class jEdit
 			bufferList.setSelectionInterval(0, listModel.getSize() - 1);
 
 			int result = JOptionPane.showConfirmDialog(view,
-				new Object[]{ new JLabel(jEdit.getProperty("saveall.message")), new JScrollPane(bufferList) },
-				jEdit.getProperty("saveall.title"),
-				JOptionPane.YES_NO_OPTION,
-				JOptionPane.QUESTION_MESSAGE);
+					new Object[]{ new JLabel(jEdit.getProperty("saveall.message")), new JScrollPane(bufferList) },
+					jEdit.getProperty("saveall.title"),
+					JOptionPane.YES_NO_OPTION,
+					JOptionPane.QUESTION_MESSAGE);
 			if(result != JOptionPane.YES_OPTION)
 				return;
 
@@ -2271,8 +2271,8 @@ public class jEdit
 		if(confirm && hasDirty)
 		{
 			int result = GUIUtilities.confirm(view,"reload-all",null,
-				JOptionPane.YES_NO_OPTION,
-				JOptionPane.QUESTION_MESSAGE);
+					JOptionPane.YES_NO_OPTION,
+					JOptionPane.QUESTION_MESSAGE);
 			if(result != JOptionPane.YES_OPTION)
 				return;
 		}
@@ -2308,7 +2308,7 @@ public class jEdit
 		// paths on case-insensitive filesystems are stored as lower
 		// case in the hash.
 		if((VFSManager.getVFSForPath(path).getCapabilities()
-			& VFS.CASE_INSENSITIVE_CAP) != 0)
+				& VFS.CASE_INSENSITIVE_CAP) != 0)
 		{
 			path = path.toLowerCase();
 		}
@@ -2396,7 +2396,7 @@ public class jEdit
 	 * @param newPosition The position after the move
 	 */
 	public static void moveBuffer(EditPane editPane,
-		int oldPosition, int newPosition)
+								  int oldPosition, int newPosition)
 	{
 		bufferSetManager.moveBuffer(editPane, oldPosition, newPosition);
 	} //}}}
@@ -2444,7 +2444,7 @@ public class jEdit
 	public static void checkBufferStatus(View view, boolean currentBuffer)
 	{
 		Log.log(Log.DEBUG, jEdit.class, "checkBufferStatus for " +
-			(currentBuffer ? "current buffer: " + view.getBuffer() : "all buffers"));
+				(currentBuffer ? "current buffer: " + view.getBuffer() : "all buffers"));
 
 		// still need to call the status check even if the option is
 		// off, so that the write protection is updated if it changes
@@ -2476,36 +2476,36 @@ public class jEdit
 
 			switch(states[i])
 			{
-			case Buffer.FILE_CHANGED:
-				if(buffer.getAutoReload())
-				{
-					if(buffer.isDirty())
-						notifyFileChanged = true;
-					else
+				case Buffer.FILE_CHANGED:
+					if(buffer.getAutoReload())
 					{
-						buffer.load(view,true);
-						// File can be changed into link on disk or vice versa, so update
-						// file-path,buffer key value pair in bufferHash
-						final Buffer b = buffer;
-						Runnable runnable = new Runnable()
+						if(buffer.isDirty())
+							notifyFileChanged = true;
+						else
 						{
-							public void run()
+							buffer.load(view,true);
+							// File can be changed into link on disk or vice versa, so update
+							// file-path,buffer key value pair in bufferHash
+							final Buffer b = buffer;
+							Runnable runnable = new Runnable()
 							{
-								updateBufferHash(b);
-							}
-						};
-						AwtRunnableQueue.INSTANCE.runAfterIoTasks(runnable);
+								public void run()
+								{
+									updateBufferHash(b);
+								}
+							};
+							AwtRunnableQueue.INSTANCE.runAfterIoTasks(runnable);
+						}
 					}
-				}
-				else	// no automatic reload even if general setting is true
-					autoReload = false;
-				// don't notify user if "do nothing" was chosen
-				if(buffer.getAutoReloadDialog())
+					else	// no automatic reload even if general setting is true
+						autoReload = false;
+					// don't notify user if "do nothing" was chosen
+					if(buffer.getAutoReloadDialog())
+						notifyFileChanged = true;
+					break;
+				case Buffer.FILE_DELETED:
 					notifyFileChanged = true;
-				break;
-			case Buffer.FILE_DELETED:
-				notifyFileChanged = true;
-				break;
+					break;
 			}
 
 			buffer = buffer.next;
@@ -2627,7 +2627,7 @@ public class jEdit
 					startupDone.add(false);
 				}
 				EventQueue.invokeLater(new DockingLayoutSetter(
-					newView, config, index));
+						newView, config, index));
 			}
 
 			// show tip of the day
@@ -2806,18 +2806,18 @@ public class jEdit
 		progress.setValue(usedKb);
 		progress.setStringPainted(true);
 		progress.setString(jEdit.getProperty("memory-status.use",
-			new Object[] { usedKb, totalKb }));
+				new Object[] { usedKb, totalKb }));
 
 		Object[] message = new Object[4];
 		message[0] = getProperty("memory-status.gc",
-			new Object[] { (usedBefore - used) / 1024 });
+				new Object[] { (usedBefore - used) / 1024 });
 		message[1] = Box.createVerticalStrut(12);
 		message[2] = progress;
 		message[3] = Box.createVerticalStrut(6);
 
 		JOptionPane.showMessageDialog(view,message,
-			jEdit.getProperty("memory-status.title"),
-			JOptionPane.INFORMATION_MESSAGE);
+				jEdit.getProperty("memory-status.title"),
+				JOptionPane.INFORMATION_MESSAGE);
 	} //}}}
 
 	//{{{ getJEditHome() method
@@ -2870,7 +2870,7 @@ public class jEdit
 			return;
 
 		String backupDir = MiscUtilities.constructPath(
-			settingsDirectory,"settings-backup");
+				settingsDirectory,"settings-backup");
 		File dir = new File(backupDir);
 		if(!dir.exists())
 			dir.mkdirs();
@@ -2900,13 +2900,13 @@ public class jEdit
 		KillRing.getInstance().save();
 
 		File file1 = new File(MiscUtilities.constructPath(
-			settingsDirectory,"#properties#save#"));
+				settingsDirectory,"#properties#save#"));
 		File file2 = new File(MiscUtilities.constructPath(
-			settingsDirectory,"properties"));
+				settingsDirectory,"properties"));
 		if(file2.exists() && file2.lastModified() != propsModTime)
 		{
 			Log.log(Log.WARNING,jEdit.class,file2 + " changed"
-				+ " on disk; will not save user properties");
+					+ " on disk; will not save user properties");
 		}
 		else
 		{
@@ -2929,7 +2929,7 @@ public class jEdit
 			if (! file1.renameTo(file2))
 			{
 				Log.log(Log.ERROR,jEdit.class,"Failed to rename \"" + file1 +
-					"\" to the user properties file \"" + file2 + "\".");
+						"\" to the user properties file \"" + file2 + "\".");
 			}
 			propsModTime = file2.lastModified();
 		}
@@ -3079,9 +3079,9 @@ public class jEdit
 	{
 		String registerNameString = Registers.getRegisterNameString();
 		return jEdit.getProperty("view.status." + action,
-			new String[] {registerNameString == null ?
-				      jEdit.getProperty("view.status.no-registers") :
-				      registerNameString});
+				new String[] {registerNameString == null ?
+						jEdit.getProperty("view.status.no-registers") :
+						registerNameString});
 	} //}}}
 
 	//{{{ getKeyMapManager() method
@@ -3096,7 +3096,7 @@ public class jEdit
 	{
 		long currentTime = System.currentTimeMillis();
 		Log.log(Log.DEBUG, jEdit.class,
-			label + ':' + (currentTime - startupTime) + " ms");
+				label + ':' + (currentTime - startupTime) + " ms");
 	} //}}}
 
 	//}}} Miscellaneous methods fold end
@@ -3110,7 +3110,7 @@ public class jEdit
 	static void updatePosition(String oldPath, Buffer buffer)
 	{
 		if((VFSManager.getVFSForPath(oldPath).getCapabilities()
-			& VFS.CASE_INSENSITIVE_CAP) != 0)
+				& VFS.CASE_INSENSITIVE_CAP) != 0)
 		{
 			oldPath = oldPath.toLowerCase();
 		}
@@ -3119,7 +3119,7 @@ public class jEdit
 
 		String path = buffer.getSymlinkPath();
 		if((VFSManager.getVFSForPath(path).getCapabilities()
-			& VFS.CASE_INSENSITIVE_CAP) != 0)
+				& VFS.CASE_INSENSITIVE_CAP) != 0)
 		{
 			path = path.toLowerCase();
 		}
@@ -3154,7 +3154,7 @@ public class jEdit
 				else
 				{
 					msg = jEdit.getProperty("xmode-error." + what,
-						new String[] { subst.toString() });
+							new String[] { subst.toString() });
 					if(subst instanceof Throwable)
 						Log.log(Log.ERROR,this,subst);
 					if (subst instanceof SAXParseException)
@@ -3211,7 +3211,7 @@ public class jEdit
 	 * @param args a list of arguments which correspond to {0} and {1} in the string to print.
 	 */
 	static void pluginError(String path, String messageProp,
-		Object[] args)
+							Object[] args)
 	{
 		synchronized(pluginErrorLock)
 		{
@@ -3219,8 +3219,8 @@ public class jEdit
 				pluginErrors = new Vector<ErrorListDialog.ErrorEntry>();
 
 			ErrorListDialog.ErrorEntry newEntry =
-				new ErrorListDialog.ErrorEntry(
-				path,messageProp,args);
+					new ErrorListDialog.ErrorEntry(
+							path,messageProp,args);
 
 			for (ErrorListDialog.ErrorEntry pluginError : pluginErrors)
 			{
@@ -3260,7 +3260,7 @@ public class jEdit
 		return activeView;
 	} //}}}
 
-		//{{{ updateBufferHash() method
+	//{{{ updateBufferHash() method
 	/**
 	 * @since jEdit 5.3pre1
 	 */
@@ -3276,11 +3276,11 @@ public class jEdit
 			// values() collection also removes it from bufferHash
 			if(buffer == b)
 				iterator.remove();
-        }
+		}
 
 		String path = buffer.getSymlinkPath();
 		if((VFSManager.getVFSForPath(path).getCapabilities()
-			& VFS.CASE_INSENSITIVE_CAP) != 0)
+				& VFS.CASE_INSENSITIVE_CAP) != 0)
 		{
 			path = path.toLowerCase();
 		}
@@ -3307,7 +3307,7 @@ public class jEdit
 	private static final Object pluginErrorLock = new Object();
 	private static Vector<PluginJAR> jars;
 	private static final JEditPropertyManager propertyManager =
-	                     new JEditPropertyManager();
+			new JEditPropertyManager();
 	private static long startupTime = System.currentTimeMillis();
 
 	private static boolean saveCaret;
@@ -3349,11 +3349,11 @@ public class jEdit
 		System.out.println("Usage: jedit [<options>] [<files>]");
 
 		System.out.println("	<file> +marker:<marker>: Positions caret"
-			+ " at marker <marker>");
+				+ " at marker <marker>");
 		System.out.println("	<file> +line:<line>: Positions caret"
-			+ " at line number <line>");
+				+ " at line number <line>");
 		System.out.println("	<file> +line:<line>,<column>: Positions caret"
-			+ " at line number <line> and column number <column>");
+				+ " at line number <line> and column number <column>");
 		System.out.println("	--: End of options");
 		System.out.println("	-background: Run in background mode");
 		System.out.println("	-nobackground: Disable background mode (default)");
@@ -3397,9 +3397,9 @@ public class jEdit
 	 * Creates a BeanShell script that can be sent to a running edit server.
 	 */
 	private static String makeServerScript(boolean wait,
-		boolean restore, boolean newView,
-		boolean newPlainView, String[] args,
-		String scriptFile)
+										   boolean restore, boolean newView,
+										   boolean newPlainView, String[] args,
+										   String scriptFile)
 	{
 		StringBuilder script = new StringBuilder();
 
@@ -3450,8 +3450,8 @@ public class jEdit
 		{
 			scriptFile = MiscUtilities.constructPath(userDir,scriptFile);
 			script.append("BeanShell.runScript(view,\"")
-				.append(StandardUtilities.charsToEscapes(scriptFile))
-				.append("\",null,this.namespace);\n");
+					.append(StandardUtilities.charsToEscapes(scriptFile))
+					.append("\",null,this.namespace);\n");
 		}
 
 		return script.toString();
@@ -3486,19 +3486,19 @@ public class jEdit
 		{
 			@Override
 			public void invokeAction(EventObject evt,
-				EditAction action)
+									 EditAction action)
 			{
 				View view = GUIUtilities.getView(
-					(Component)evt.getSource());
+						(Component)evt.getSource());
 
 				boolean actionBarVisible;
 				if(view.getActionBar() == null
-					|| !view.getActionBar().isShowing())
+						|| !view.getActionBar().isShowing())
 					actionBarVisible = false;
 				else
 				{
 					actionBarVisible = view.getActionBar()
-						.isVisible();
+							.isVisible();
 				}
 
 				view.getInputHandler().invokeAction(action);
@@ -3507,7 +3507,7 @@ public class jEdit
 				{
 					// XXX: action bar might not be 'temp'
 					ActionBar actionBar = view
-						.getActionBar();
+							.getActionBar();
 					if(actionBar != null)
 						view.removeToolBar(actionBar);
 				}
@@ -3524,14 +3524,14 @@ public class jEdit
 		inputHandler = new DefaultInputHandler(null);
 		// Add our protocols to java.net.URL's list
 		System.getProperties().put("java.protocol.handler.pkgs",
-			"org.gjt.sp.jedit.proto|" +
-			System.getProperty("java.protocol.handler.pkgs",""));
+				"org.gjt.sp.jedit.proto|" +
+						System.getProperty("java.protocol.handler.pkgs",""));
 
 		// Set the User-Agent string used by the java.net HTTP handler
 		String userAgent = "jEdit/" + getVersion()
-			+ " (Java " + System.getProperty("java.version")
-			+ ". " + System.getProperty("java.vendor")
-			+ "; " + System.getProperty("os.arch") + ')';
+				+ " (Java " + System.getProperty("java.version")
+				+ ". " + System.getProperty("java.vendor")
+				+ "; " + System.getProperty("os.arch") + ')';
 		System.getProperties().put("http.agent",userAgent);
 
 		/* Determine installation directory.
@@ -3542,11 +3542,11 @@ public class jEdit
 		if(jEditHome == null)
 		{
 			String classpath = System
-				.getProperty("java.class.path");
+					.getProperty("java.class.path");
 			int index = classpath.toLowerCase()
-				.indexOf("jedit.jar");
+					.indexOf("jedit.jar");
 			int start = classpath.lastIndexOf(File
-				.pathSeparator,index) + 1;
+					.pathSeparator,index) + 1;
 			// if started with java -jar jedit.jar
 			if(start == index)
 			{
@@ -3555,7 +3555,7 @@ public class jEdit
 			else if(index > start)
 			{
 				jEditHome = classpath.substring(start,
-					index - 1);
+						index - 1);
 			}
 			else
 			{
@@ -3572,9 +3572,9 @@ public class jEdit
 
 					Log.log(Log.WARNING,jEdit.class,"jedit.jar not in class path!");
 					Log.log(Log.WARNING,jEdit.class,"Assuming jEdit is installed in "
-						+ jEditHome + '.');
+							+ jEditHome + '.');
 					Log.log(Log.WARNING,jEdit.class,"Override with jedit.home "
-						+ "system property.");
+							+ "system property.");
 				}
 			}
 		}
@@ -3583,13 +3583,13 @@ public class jEdit
 
 		Log.log(Log.MESSAGE,jEdit.class,"jEdit home directory is " + jEditHome);
 		keymapManager = new KeymapManagerImpl(propertyManager,
-		      new File(jEditHome, "keymaps"),
-		      userKeymapFolder);
+				new File(jEditHome, "keymaps"),
+				userKeymapFolder);
 
 		if(settingsDirectory != null)
 		{
 			jarCacheDirectory = MiscUtilities.constructPath(
-				settingsDirectory,"jars-cache");
+					settingsDirectory,"jars-cache");
 			new File(jarCacheDirectory).mkdirs();
 		}
 
@@ -3614,14 +3614,14 @@ public class jEdit
 			public void run()
 			{
 				Thread.currentThread().setContextClassLoader(
-					new JARClassLoader());
+						new JARClassLoader());
 			}
 		});
 	} //}}}
 
 	//{{{ getResourceAsUTF8Text() method
 	private static Reader getResourceAsUTF8Text(String name)
-		throws IOException
+			throws IOException
 	{
 		InputStream bytes = jEdit.class.getResourceAsStream(name);
 		if (bytes == null)
@@ -3657,22 +3657,22 @@ public class jEdit
 		try
 		{
 			propMgr.loadSystemProps(getResourceAsUTF8Text(
-				"/org/gjt/sp/jedit/jedit.props"));
+					"/org/gjt/sp/jedit/jedit.props"));
 			propMgr.loadSystemProps(getResourceAsUTF8Text(
-				"/org/gjt/sp/jedit/jedit_gui.props"));
+					"/org/gjt/sp/jedit/jedit_gui.props"));
 			propMgr.loadSystemProps(getResourceAsUTF8Text(
-				"/org/jedit/localization/jedit_en.props"));
+					"/org/jedit/localization/jedit_en.props"));
 		}
 		catch(Exception e)
 		{
 			Log.log(Log.ERROR,jEdit.class,
-				"Error while loading system properties!");
+					"Error while loading system properties!");
 			Log.log(Log.ERROR,jEdit.class,
-				"One of the following property files could not be loaded:\n"
-				+ "- jedit.props\n"
-				+ "- jedit_gui.props\n"
-				+ "- jedit_en.props\n"
-				+ "jedit.jar is probably corrupt.");
+					"One of the following property files could not be loaded:\n"
+							+ "- jedit.props\n"
+							+ "- jedit_gui.props\n"
+							+ "- jedit_en.props\n"
+							+ "jedit.jar is probably corrupt.");
 			Log.log(Log.ERROR,jEdit.class,e);
 			System.exit(1);
 		}
@@ -3688,7 +3688,7 @@ public class jEdit
 		// jEdit's system properties
 
 		String siteSettingsDirectory = MiscUtilities.constructPath(
-			jEditHome, "properties");
+				jEditHome, "properties");
 		File siteSettings = new File(siteSettingsDirectory);
 
 		if (!(siteSettings.exists() && siteSettings.isDirectory()))
@@ -3699,7 +3699,7 @@ public class jEdit
 			return;
 
 		Arrays.sort(snippets,
-			new StandardUtilities.StringCompare<String>(true));
+				new StandardUtilities.StringCompare<String>(true));
 
 		for (String snippet : snippets)
 		{
@@ -3729,20 +3729,20 @@ public class jEdit
 	private static void initResources()
 	{
 		builtInActionSet = new ActionSet(null,null,null,
-			jEdit.class.getResource("actions.xml"));
+				jEdit.class.getResource("actions.xml"));
 		builtInActionSet.setLabel(getProperty("action-set.jEdit"));
 		builtInActionSet.load();
 
 		actionContext.addActionSet(builtInActionSet);
 
 		DockableWindowFactory.getInstance()
-			.loadDockableWindows(null,
-			jEdit.class.getResource("dockables.xml"),
-			null);
+				.loadDockableWindows(null,
+						jEdit.class.getResource("dockables.xml"),
+						null);
 
 		ServiceManager.loadServices(null,
-			jEdit.class.getResource("services.xml"),
-			null);
+				jEdit.class.getResource("services.xml"),
+				null);
 	} //}}}
 
 	//{{{ initPlugins() method
@@ -3754,7 +3754,7 @@ public class jEdit
 		if(jEditHome != null)
 		{
 			addPluginJARsFromDirectory(MiscUtilities.constructPath(
-				jEditHome,"jars"));
+					jEditHome,"jars"));
 		}
 
 		if(settingsDirectory != null)
@@ -3778,14 +3778,17 @@ public class jEdit
 	{
 		if(settingsDirectory != null)
 		{
+			FileInputStream in = null;
+
 			File file = new File(MiscUtilities.constructPath(
-				settingsDirectory,"properties"));
+					settingsDirectory,"properties"));
 			propsModTime = file.lastModified();
 
 			try
 			{
-				propMgr.loadUserProps(
-					new FileInputStream(file));
+				in = new FileInputStream(file);
+				propMgr.loadUserProps(in
+				);
 			}
 			catch(FileNotFoundException fnf)
 			{
@@ -3794,6 +3797,13 @@ public class jEdit
 			catch(Exception e)
 			{
 				Log.log(Log.ERROR,jEdit.class,e);
+			}finally {
+				try {
+					if (in != null)
+						in.close();
+				} catch (IOException e) {
+					System.out.println(e);
+				}
 			}
 		}
 	} //}}}
@@ -3849,10 +3859,10 @@ public class jEdit
 	private static String fontToString(Font font)
 	{
 		return font.getFamily()
-			+ '-'
-			+ fontStyleToString(font.getStyle())
-			+ '-'
-			+ font.getSize();
+				+ '-'
+				+ fontStyleToString(font.getStyle())
+				+ '-'
+				+ font.getSize();
 	} //}}}
 
 	//{{{ initPLAF() method
@@ -3870,33 +3880,33 @@ public class jEdit
 			sLfOld = lfOld.getClass().getName();
 
 		Font primaryFont = jEdit.getFontProperty(
-			"metal.primary.font");
+				"metal.primary.font");
 		if(primaryFont != null)
 		{
 			String primaryFontString =
-				fontToString(primaryFont);
+					fontToString(primaryFont);
 
 			System.getProperties().put(
-				"swing.plaf.metal.controlFont",
-				primaryFontString);
+					"swing.plaf.metal.controlFont",
+					primaryFontString);
 			System.getProperties().put(
-				"swing.plaf.metal.menuFont",
-				primaryFontString);
+					"swing.plaf.metal.menuFont",
+					primaryFontString);
 		}
 
 		Font secondaryFont = jEdit.getFontProperty(
-			"metal.secondary.font");
+				"metal.secondary.font");
 		if(secondaryFont != null)
 		{
 			String secondaryFontString =
-				fontToString(secondaryFont);
+					fontToString(secondaryFont);
 
 			System.getProperties().put(
-				"swing.plaf.metal.systemFont",
-				secondaryFontString);
+					"swing.plaf.metal.systemFont",
+					secondaryFontString);
 			System.getProperties().put(
-				"swing.plaf.metal.userFont",
-				secondaryFontString);
+					"swing.plaf.metal.userFont",
+					secondaryFontString);
 		}
 
 		// Though the cause is not known, this must precede
@@ -3907,7 +3917,7 @@ public class jEdit
 		// The difference of the behavior was seen on Sun JRE
 		// 6u16 on Windows XP and Windows L&F.
 		KeyboardFocusManager.setCurrentKeyboardFocusManager(
-			new MyFocusManager());
+				new MyFocusManager());
 
 		// A couple of issues here -- (these are fixed)
 		// First, setLookAndFeel must be called on the EDT. On initial start
@@ -3933,21 +3943,21 @@ public class jEdit
 			try
 			{
 				EventQueue.invokeAndWait(
-					new Runnable()
-					{
-						public void run()
+						new Runnable()
 						{
-							try
+							public void run()
 							{
-								UIManager.setLookAndFeel(sLf);
-							}
-							catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException e)
-							{
-								// same as above, there really isn't anything to do and this may be
-								// bogus, the lnf may be from the Look And Feel plugin
+								try
+								{
+									UIManager.setLookAndFeel(sLf);
+								}
+								catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException e)
+								{
+									// same as above, there really isn't anything to do and this may be
+									// bogus, the lnf may be from the Look And Feel plugin
+								}
 							}
 						}
-					}
 				);
 			}
 			catch (InterruptedException | InvocationTargetException e)
@@ -3959,16 +3969,16 @@ public class jEdit
 		LookAndFeel lfNew = UIManager.getLookAndFeel();
 		if (lfNew != null)
 			sLfNew = lfNew.getClass().getName();
-			Log.log(Log.DEBUG, jEdit.class,
+		Log.log(Log.DEBUG, jEdit.class,
 				"initPLAF " +
-				(EventQueue.isDispatchThread() ? "edt"
-				                               : "non-edt") +
-				" old=" + sLfOld +
-				" requested=" + lf +
-				" new=" + sLfNew );
+						(EventQueue.isDispatchThread() ? "edt"
+								: "non-edt") +
+						" old=" + sLfOld +
+						" requested=" + lf +
+						" new=" + sLfNew );
 		if (!sLf.equals(sLfNew))
 			Log.log(Log.WARNING, jEdit.class,
-				"initPLAF failed to set requested l&f " + lf);
+					"initPLAF failed to set requested l&f " + lf);
 
 		UIDefaults defaults = UIManager.getDefaults();
 
@@ -3976,13 +3986,13 @@ public class jEdit
 		if(jEdit.getBooleanProperty("textColors"))
 		{
 			Color background = new javax.swing.plaf.ColorUIResource(
-				jEdit.getColorProperty("view.bgColor"));
+					jEdit.getColorProperty("view.bgColor"));
 			Color foreground = new javax.swing.plaf.ColorUIResource(
-				jEdit.getColorProperty("view.fgColor"));
+					jEdit.getColorProperty("view.fgColor"));
 			Color caretColor = new javax.swing.plaf.ColorUIResource(
-				jEdit.getColorProperty("view.caretColor"));
+					jEdit.getColorProperty("view.caretColor"));
 			Color selectionColor = new javax.swing.plaf.ColorUIResource(
-				jEdit.getColorProperty("view.selectionColor"));
+					jEdit.getColorProperty("view.selectionColor"));
 
 			String[] prefixes = { "PasswordField", "TextField", "TextArea", "List", "Table" };
 			for (String prefix : prefixes)
@@ -4017,9 +4027,9 @@ public class jEdit
 		defaults.put("Tree.rowHeight", 0);
 
 		JFrame.setDefaultLookAndFeelDecorated(
-			getBooleanProperty("decorate.frames"));
+				getBooleanProperty("decorate.frames"));
 		JDialog.setDefaultLookAndFeelDecorated(
-			getBooleanProperty("decorate.dialogs"));
+				getBooleanProperty("decorate.dialogs"));
 
 		if (isStartupDone())
 		{
@@ -4033,8 +4043,8 @@ public class jEdit
 				catch(Exception e)
 				{
 					Log.log(Log.ERROR, jEdit.class,
-						"Window " + iWindow
-						+ ": " + window, e);
+							"Window " + iWindow
+									+ ": " + window, e);
 					break;
 				}
 				iWindow++;
@@ -4072,8 +4082,8 @@ public class jEdit
 				try
 				{
 					untitledCount = Math.max(untitledCount,
-						Integer.parseInt(buffer.getName()
-						.substring(9)));
+							Integer.parseInt(buffer.getName()
+									.substring(9)));
 				}
 				catch(NumberFormatException nf)
 				{
@@ -4098,7 +4108,7 @@ public class jEdit
 			return;
 
 		Arrays.sort(snippets,
-			new StandardUtilities.StringCompare<File>(true));
+				new StandardUtilities.StringCompare<File>(true));
 
 		/*
 		 * Force the default encoding to UTF-8 temporarily.
@@ -4148,7 +4158,7 @@ public class jEdit
 			{
 				System.setProperty("socksProxyHost", socksHost);
 				Log.log(Log.DEBUG, jEdit.class,
-					"SOCKS proxy enabled: " + socksHost);
+						"SOCKS proxy enabled: " + socksHost);
 			}
 
 			String socksPort = jEdit.getProperty("firewall.socks.port");
@@ -4204,7 +4214,7 @@ public class jEdit
 			{
 				Log.log(Log.DEBUG, jEdit.class, "HTTP proxy user: " + username);
 				PasswordAuthentication pw = new PasswordAuthentication(
-					username,password.toCharArray()
+						username,password.toCharArray()
 				);
 				Authenticator.setDefault(new FirewallAuthenticator(pw));
 			}
@@ -4230,7 +4240,7 @@ public class jEdit
 
 	//{{{ finishStartup() method
 	private static void finishStartup(final boolean gui, final boolean restore,
-		final boolean newPlainView, final String userDir, final String[] args)
+									  final boolean newPlainView, final String userDir, final String[] args)
 	{
 		EventQueue.invokeLater(new Runnable()
 		{
@@ -4240,9 +4250,9 @@ public class jEdit
 				int count = getBufferCount();
 
 				boolean restoreFiles = restore
-					&& jEdit.getBooleanProperty("restore")
-					&& (count == 0 ||
-					jEdit.getBooleanProperty("restore.cli"));
+						&& jEdit.getBooleanProperty("restore")
+						&& (count == 0 ||
+						jEdit.getBooleanProperty("restore.cli"));
 
 				if(gui || count != 0)
 				{
@@ -4291,9 +4301,9 @@ public class jEdit
 				GUIUtilities.hideSplashScreen();
 
 				Log.log(Log.MESSAGE,jEdit.class,"Startup "
-					+ "complete: "
-					+ (System.currentTimeMillis() -
-					   startupTime) + " ms");
+						+ "complete: "
+						+ (System.currentTimeMillis() -
+						startupTime) + " ms");
 
 				//{{{ Report any plugin errors
 				if(pluginErrors != null)
@@ -4319,24 +4329,24 @@ public class jEdit
 			return;
 
 		String caption = getProperty(
-			"plugin-error.caption" + (pluginErrors.size() == 1
-			? "-1" : ""));
+				"plugin-error.caption" + (pluginErrors.size() == 1
+						? "-1" : ""));
 
 		Frame frame = (PluginManager.getInstance() == null
-			? viewsFirst
-			: PluginManager.getInstance());
+				? viewsFirst
+				: PluginManager.getInstance());
 
 		new ErrorListDialog(frame,
-			getProperty("plugin-error.title"),
-			caption,pluginErrors,true);
+				getProperty("plugin-error.title"),
+				caption,pluginErrors,true);
 		pluginErrors = null;
 	} //}}}
 
 	//{{{ getNotLoadedPluginJARs() method
 	private static void getNotLoadedPluginJARs(Collection<String> returnValue,
-		String dir, String[] list)
+											   String dir, String[] list)
 	{
-loop:
+		loop:
 		for (String name : list)
 		{
 			if (!name.toLowerCase().endsWith(".jar"))
@@ -4350,7 +4360,7 @@ loop:
 				String jarPath = jar.getPath();
 
 				if (path.equals(jarPath)
-				    || name.equals(MiscUtilities.getFileName(jarPath)) && !new File(jarPath).exists())
+						|| name.equals(MiscUtilities.getFileName(jarPath)) && !new File(jarPath).exists())
 					continue loop;
 			}
 
@@ -4360,7 +4370,7 @@ loop:
 
 	//{{{ gotoMarker() method
 	private static void gotoMarker(final View view, final Buffer buffer,
-		final String marker)
+								   final String marker)
 	{
 		AwtRunnableQueue.INSTANCE.runAfterIoTasks(new Runnable()
 		{
@@ -4432,7 +4442,7 @@ loop:
 		{
 			String symlinkPath = buffer.getSymlinkPath();
 			if((VFSManager.getVFSForPath(symlinkPath).getCapabilities()
-				& VFS.CASE_INSENSITIVE_CAP) != 0)
+					& VFS.CASE_INSENSITIVE_CAP) != 0)
 			{
 				symlinkPath = symlinkPath.toLowerCase();
 			}
@@ -4636,7 +4646,7 @@ loop:
 		Log.log(Log.MESSAGE,jEdit.class,"Loading mode catalog file " + path);
 
 		ModeCatalogHandler handler = new ModeCatalogHandler(
-			MiscUtilities.getParentOfPath(path),resource)
+				MiscUtilities.getParentOfPath(path),resource)
 		{
 			@Override
 			protected Mode instantiateMode(String modeName)
@@ -4688,7 +4698,7 @@ loop:
 		if(entry != null && saveCaret && props.get(Buffer.CARET) == null)
 		{
 			props.put(Buffer.CARET, entry.caret);
-			 if(entry.selection != null)
+			if(entry.selection != null)
 			{
 				// getSelection() converts from string to
 				// Selection[]
@@ -4733,11 +4743,11 @@ loop:
 					if(comp instanceof View)
 					{
 						((View)comp).getInputHandler().processKeyEvent(evt,
-							View.VIEW, false);
+								View.VIEW, false);
 						return true;
 					}
 					else if(comp == null || comp instanceof Window
-						|| comp instanceof JEditTextArea)
+							|| comp instanceof JEditTextArea)
 					{
 						if (comp instanceof PluginManager)
 						{
